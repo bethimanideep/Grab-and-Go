@@ -5,169 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <style>
-        *{
-            padding:0 ;
-            margin:0;
-        }
-        .container{
-            width:100%;
-            /* position: absolute; */
-           
-            
-            overflow: hidden;
-        }
-        .wrapper{
-            width:100%;
-            display: flex;
-            animation: slide 10s infinite;
-        }
-        @keyframes slide{
-            0%{
-                transform:translateX(0);
-            }
-            25%{
-                transform:translateX(0);
-            }
-            30%{
-                transform:translateX(-100%);
-            }
-                50%{
-                transform:translateX(-100%);
-            }
-            55%{
-                transform:translateX(-200%);
-            }
-            75%{
-                transform:translateX(-200%);
-            }
-            80%{
-                transform:translateX(-300%);
-            }
-            100%{
-                transform:translateX(-300%);
-            }
-        }
-        .wrapper>img{
-            width:100%;
-        }
-        .slide1{
-            width:80%;
-            height: auto;
-            margin-top:10px;
-            margin:auto;
-            display: grid;
-            grid-template-columns: repeat(5,1fr);
-            gap:20px;
-        }
-        .slidecard{
-            text-align: center;
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            background-color: aliceblue;
-            padding:20px;
-        }
-        .slidecard> button{
-            background-color: rgb(255, 217, 46);
-            border: none;
-            padding:3px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        .slidecard> button:hover{
-            background-color: rgb(244, 255, 94);
-            cursor: pointer;
-        }
-        .slidecard:hover{
-            cursor: pointer;
-            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-        }
-        
-        /* medium-screen */
-        @media screen and (min-width:651px) and (max-width:1024px){
-            .slide1{
-                grid-template-columns: repeat(3,1fr);
-            }
-            #box{
-                grid-template-columns: repeat(3,1fr);
-
-            }
-            .bank{
-                grid-template-columns: repeat(3,1fr);
-            }
-        }
-
-        /* small-screen */
-        @media screen and (min-width:320px) and (max-width:650px){
-            .slide1{
-                grid-template-columns: repeat(2,1fr);
-            }
-            #box{
-                grid-template-columns: repeat(3,1fr);
-            }
-            .bank{
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
-        
-        #box{
-            width:80%;
-            margin:auto;
-            margin-top:50px;
-            /* display: flex; */
-            display: grid;
-            grid-template-columns: repeat(6,1fr);
-        }
-       #box button{
-        margin:auto;
-        width:170px;
-        height:56px;
-        background-color: rgb(177, 190, 202);
-        color:black;
-        border:none;
-        font-size:18px;
-        font-weight: 700;
-        text-align: center;
-        border-radius: 5px;
-        
-       }
-       #box button:hover{
-            cursor: pointer;
-       }
-       #box :nth-child(2){
-        background-color: rgb(18, 0, 59);
-        color: white;
-       }
-       #box :nth-child(3){
-        background-color: rgb(52, 100, 59);
-        color: white;
-       }
-       .head1{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        font-size: 30px;
-       }
-
-       .bank{
-        width:80%;
-        height:250px;
-        margin:auto;
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap:20px;
-        
-       }
-       .bank-card{
-        width:100%;
-        height:100%;
-       }
-       .bank-card img:hover{
-            cursor: pointer;
-            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-       }
-       
-       
-    </style>
+    <link rel="stylesheet" href="./Homepage.css">
 </head>
 <body>
     
@@ -201,7 +39,7 @@
             <p>Standard Delivery</p>
             <P>09:00AM to 12:00PM</P>
             <input type="text" size="2" style="text-align:center" value="1">
-            <button>ADD</button>
+            <button id="btn1">ADD</button>
         </div>
         <div class="slidecard">
             <img src="https://www.bigbasket.com/media/uploads/p/s/1204352_1-fresho-sandwich-bread-white-chemical-free-400g-eggs-regular-6pcs.jpg" alt="">
@@ -210,7 +48,7 @@
             <p>Standard Delivery</p>
             <P>09:00AM to 12:00PM</P>
             <input type="text" size="2"style="text-align:center" value="1">
-            <button>ADD</button>
+            <button id="btn2">ADD</button>
         </div>
         <div class="slidecard">
             <img src="https://www.bigbasket.com/media/uploads/p/s/1204991_3-amul-butter-pasteurized.jpg" alt="">
@@ -219,7 +57,7 @@
             <p>Standard Delivery</p>
             <P>09:00AM to 12:00PM</P>
             <input type="text" size="2"style="text-align:center" value="1">
-            <button>ADD</button>
+            <button id="btn3">ADD</button>
         </div>
         <div class="slidecard">
             <img src="https://www.bigbasket.com/media/uploads/p/s/264679_4-milky-mist-paneer-premium-fresh.jpg" alt="">
@@ -228,7 +66,7 @@
             <p>Standard Delivery</p>
             <P>09:00AM to 12:00PM</P>
             <input type="text" size="2" style="text-align:center"value="1">
-            <button>ADD</button>
+            <button id="btn4">ADD</button>
         </div>
         <div class="slidecard">
             <img src="https://www.bigbasket.com/media/uploads/p/s/10000148_30-fresho-onion.jpg" alt="">
@@ -237,7 +75,7 @@
             <p>Standard Delivery</p>
             <P>09:00AM to 12:00PM</P>
             <input type="text" size="2"style="text-align:center" value="1">
-            <button>ADD</button>
+            <button id="btn5">ADD</button>
         </div>
         
     </div>
@@ -249,8 +87,9 @@
 
     <div class="bank">
         <div class="bank-card">
+            
             <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/c180fc98-bbcd-4dba-9bad-65fc5dca26e6/t1_hp_aff_m_onecard_360_160123.jpg" alt="">
-
+        
         </div>
         <div class="bank-card">
             <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/c180fc98-bbcd-4dba-9bad-65fc5dca26e6/t1_hp_aff_m_hsbc_360_160123.jpg" alt="">
@@ -266,5 +105,176 @@
         </div>
     </div>
 
+    <div class="head1">
+        <p>Best Sellers</p>
+    </div>
+    <div class="slide1">
+        
+        <div class="slidecard">
+            <a href="https://www.masaischool.com/">
+            <img src="https://www.bigbasket.com/media/uploads/p/s/10000074_19-fresho-cauliflower.jpg" alt="">
+        </a>
+            <h3>Cauliflower</h3>
+            <p>Rs 20.50</p>
+            <p>Standard Delivery</p>
+            <P>09:00AM to 12:00PM</P>
+            <input type="text" size="2" style="text-align:center" value="1">
+            <button id="btn6">ADD</button>
+        </div>
+    
+        <div class="slidecard">
+            <img src="https://www.bigbasket.com/media/uploads/p/s/10000071_14-fresho-carrot-orange.jpg" alt="">
+            <h3>Carrot-Orange(Loose)</h3>
+            <p>Rs 9</p>
+            <p>Standard Delivery</p>
+            <P>09:00AM to 12:00PM</P>
+            <input type="text" size="2"style="text-align:center" value="1">
+            <button id="btn7">ADD</button>
+        </div>
+        <div class="slidecard">
+            <img src="https://www.bigbasket.com/media/uploads/p/s/10000069_20-fresho-capsicum-green.jpg" alt="">
+            <h3>Capsicum-Green(Loose)</h3>
+            <p>Rs 33</p>
+            <p>Standard Delivery</p>
+            <P>09:00AM to 12:00PM</P>
+            <input type="text" size="2"style="text-align:center" value="1">
+            <button id="btn8">ADD</button>
+        </div>
+        <div class="slidecard">
+            <img src="https://www.bigbasket.com/media/uploads/p/s/10000097_19-fresho-coriander-leaves.jpg" alt="">
+            <h3>Coriander-Leaves</h3>
+            <p>Rs 8.50</p>
+            <p>Standard Delivery</p>
+            <P>09:00AM to 12:00PM</P>
+            <input type="text" size="2" style="text-align:center"value="1">
+            <button id="btn9">ADD</button>
+        </div>
+        <div class="slidecard">
+            <img src="https://www.bigbasket.com/media/uploads/p/s/10000144_13-fresho-ladies-finger.jpg" alt="">
+            <h3>Ladies'Fingers(Loose)</h3>
+            <p>Rs 31</p>
+            <p>Standard Delivery</p>
+            <P>09:00AM to 12:00PM</P>
+            <input type="text" size="2"style="text-align:center" value="1">
+            <button id="btn10">ADD</button>
+        </div>
+        
+    </div>
+
+    <div class="head1">
+        <p>Most Popular</p>
+    </div>
+
+    <div class="popular">
+        <div class="popular-card">
+            
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/52baa9db-3a18-48de-9d19-31ded0c30604/hp_winter-mostpopularStorefront_m_480_251222_01.jpg" alt="">
+        
+        </div>
+        <div class="popular-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/52baa9db-3a18-48de-9d19-31ded0c30604/hp_stationy-mostpopularStorefront_m_480_251222_02.jpg" alt="">
+            
+        </div>
+        <div class="popular-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/52baa9db-3a18-48de-9d19-31ded0c30604/hp_winter-loc-mostpopularStorefront_m_480_251222_03.jpg" alt="">
+            
+        </div>
+        <div class="popular-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/52baa9db-3a18-48de-9d19-31ded0c30604/hp_say-mostpopularStorefront_m_480_251222_04.jpg" alt="">
+            
+        </div>
+    </div>
+
+    <div class="head1">
+        <p>Top Offers</p>
+    </div>
+
+    <div class="offers">
+        <div class="offers-card">
+            
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/eae9b0cd-6588-4f6c-9204-a9c0c578a38f/hp_dow-topoffersStorefront_m_480_251222_01.jpg" alt="">
+        
+        </div>
+        <div class="offers-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/eae9b0cd-6588-4f6c-9204-a9c0c578a38f/hp_big-packs-topoffersStorefront_m_480_251222_02.jpg" alt="">
+            
+        </div>
+        <div class="offers-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/eae9b0cd-6588-4f6c-9204-a9c0c578a38f/hp_combos-topoffersStorefront_m_480_251222_03.jpg" alt="">
+            
+        </div>
+        <div class="offers-card">
+            <img width="100%" src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/eae9b0cd-6588-4f6c-9204-a9c0c578a38f/hp_30-corner-topoffersStorefront_m_480_251222_04.jpg" alt="">
+            
+        </div>
+    </div>
+
+    <div class="head1">
+        <p>Fruits & Vegetables</p>
+    </div>
+
+    <div class="slide2">
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_organic-fnc-fnv_Storefront_m_251222_01.jpg" alt="">
+            
+        </div>
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_fresh-fruits-fnv_Storefront_m_251222_02.jpg" alt="">
+            
+        </div>
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_fresh-vegetables-fnv_Storefront_m_251222_03.jpg" alt="">
+            
+        </div>
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_cuts-sprouts-fnv_Storefront_m_251222_04.jpg" alt="">
+            
+        </div>
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_exotic-fruits-fnv_Storefront_m_251222_05.jpg" alt="">
+            
+        </div>
+        <div class="slide2card">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/ed8bac1c-1a43-4a1b-837f-6ab9c9058268/hp_herbs-seasonings-fnv_Storefront_m_251222_06.jpg" alt="">
+            
+        </div>
+        
+    </div>
+
+
+    <div class="head1">
+        <p>Your Daily Staples</p>
+    </div>
+
+    <div class="staple">
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_atta-flour-staplesStorefront_m_480_251222_01.jpg" alt="">
+            
+        </div>
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_rice-staplesStorefront_m_480_251222_02.jpg" alt="">
+            
+        </div>
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_dals-pulses-staplesStorefront_m_480_251222_03.jpg" alt="">
+            
+        </div>
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_cooking-oils-staplesStorefront_m_480_251222_04.jpg" alt="">
+            
+        </div>
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_dry-fruits-staplesStorefront_m_480_251222_05.jpg" alt="">
+            
+        </div>
+        <div class="staplecard">
+            <img width="100%"src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/d9f84366-1b86-4c62-ac86-56d6a33da6b3/hp_salt-staplesStorefront_m_480_251222_06.jpg" alt="">
+            
+        </div>
+        
+    </div>
+
+
 </body>
 </html>
+<script src="./Homepage.js"></script>
