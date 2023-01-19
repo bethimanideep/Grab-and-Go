@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #fpdiv1 {
+            margin: 5% 0%;
+            width: 25%;
+            background-color: whitesmoke;
+            color: black;
+            padding: 3%;
+            border-radius: 10px;
+
+        }
+
+        #fpdiv1>div {
+            margin-bottom: 30px;
+        }
+
+        #fruitproducts {
+            display: flex;
+        }
+
+
+        #fruitsimg {
+            width: 100%;
+
+        }
+
+        #container {
+            width: 85%;
+            margin: auto;
+        }
+
+
+
+        #fruitproducts a {
+            display: block;
+            width: 70%;
+            text-decoration: none;
+        }
+
+
+        #fpdiv2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 2%;
+            row-gap: 50px;
+        }
+
+        #countandsort {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <img id="fruitsimg"
+                src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg"
+                alt="fruitsimg">
+        </div>
+        <div id="fruitproducts">
+            <div id="fpdiv1">
+                <div>
+                    <h4>Category</h4>
+                    <a href="Allproduct.html">All products</a>
+                    <a href="fruits.html">Fruits and Vegetables</a>
+                    <a href="bevarages.html">Bevarages</a>
+                    <a href="cleaninghousehold.html">Cleaning Household</a>
+                    <a href="foodgrains&oils&masala.html">Grains, Oils & Masala</a>
+                    <a href="SnacksFood.html">Snacks Food</a>
+                    <a href="bakery.html">Bekary</a>
+                </div>
+                <div>
+                    <h4>Brand</h4>
+                    <div>
+                        <input type="text" placeholder="Search by Brand">
+                        <button>Search</button>
+                        <div><input type="checkbox"> Fresho</div>
+                        <div><input type="checkbox"> BB Combo</div>
+                        <div><input type="checkbox"> Organic</div>
+                        <div><input type="checkbox"> USA</div>
+                        <div><input type="checkbox"> Gopalan Organic</div>
+                        <div><input type="checkbox"> Hoovu Fresh</div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Seasonal</h4>
+                    <div>
+                        <div><input type="checkbox">Summer Fruits</div>
+                        <div><input type="checkbox">Summer Veggies</div>
+                        <div><input type="checkbox">Winter Fruits</div>
+                        <div><input type="checkbox">Winter Veggies</div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Country of Origin</h4>
+                    <div>
+                        <div><input type="checkbox">India</div>
+                        <div><input type="checkbox">Australia</div>
+                        <div><input type="checkbox">China</div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Price</h4>
+                    <div>
+                        <div><input type="checkbox">Rs 21 to Rs 50 <span id="a"></span></div>
+                        <div><input type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
+                        <div><input type="checkbox">Rs 101 to Rs 200 <span id="c"></span></div>
+                        <div><input type="checkbox">Rs 201 to Rs 500 <span id="d"></span></div>
+                        <div><input type="checkbox">More than Rs 501 <span id="e"></span></div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Discount</h4>
+                    <div>
+                        <div><input type="checkbox">10% - 15%</div>
+                        <div><input type="checkbox">15% - 25% </div>
+                        <div><input type="checkbox">More than 25% </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Pack Size</h4>
+                    <div>
+                        <div><input type="checkbox">100gm</div>
+                        <div><input type="checkbox">500gm</div>
+                        <div><input type="checkbox">1kg</div>
+                    </div>
+                </div>
+            </div>
+            <div id="seconddiv">
+                <div id="countandsort">
+                    <div>
+                        <h2>Fruits and Vegetables (<span id="count"></span>)</h2>
+                    </div>
+                    <div>
+                        <select name="" id="sortprice">
+                            <option value="">Sort</option>
+                            <option value="alpha">Alphabatical</option>
+                            <option value="low">Price-Low-to-High</option>
+                            <option value="high">Price-High-to-Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="fpdiv2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let fpdiv2 = document.getElementById("fpdiv2")
+    let sortprice = document.getElementById("sortprice")
+    let carts = JSON.parse(localStorage.getItem('cartitems')) || []
+    let products=JSON.parse(localStorage.getItem('productdetails'))||[]
+
+
+    fetch("https://63c6633cdcdc478e15c05f89.mockapi.io/products")
+
+        .then((res) => res.json())
+        .then((data) => {
+            let arr = data[0].cleaninghousehold
+
+            sortprice.addEventListener('change', () => {
+                let val = sortprice.value
+                if (val == 'low') {
+                    let temp = arr.sort((a, b) => {
+                        return a.mrp - b.mrp
+                    })
+                    createdata(temp)
+                } else if (val == 'high') {
+                    let temp = arr.sort((a, b) => {
+                        return b.mrp - a.mrp
+                    })
+                    createdata(temp)
+                } else if (val == 'alpha') {
+                    let temp = arr.sort((a, b) => {
+                        if (a.name < b.name) return -1
+
+                    })
+                    createdata(temp)
+                } else {
+                    createdata(arr)
+                }
+            })
+            createdata(arr)
+        })
+
+    function createdata(data) {
+        fpdiv2.innerHTML = null
+        data.forEach(ele => {
+            let maindiv = document.createElement('div')
+            let discoutdiv = document.createElement('div')
+            let discoutp = document.createElement('p')
+            let img = document.createElement('img')
+            let brand = document.createElement('p')
+            let name = document.createElement('h4')
+            let select = document.createElement('select')
+            let o1 = document.createElement('option')
+            let o2 = document.createElement('option')
+            let bottomdiv = document.createElement('div')
+            let price = document.createElement('h5')
+            let time = document.createElement('p')
+            let quantitydiv = document.createElement('div')
+            let div1 = document.createElement('div')
+            let div2 = document.createElement('div')
+            let div3 = document.createElement('div')
+            let input = document.createElement('input')
+            let qp = document.createElement('p')
+            let addbutton = document.createElement('button')
+            input.value = 1
+            img.addEventListener('click',()=>{
+                ele["quantity"] = input.value
+                localStorage.setItem('productdetails',JSON.stringify(ele))
+                window.location.href="./productdetail.html"
+            })
+
+            addbutton.addEventListener('click', () => {
+                if (carts.length > 0) {
+                    let temp = false;
+                    for (let i = 0; i < carts.length; i++) {
+                        if (ele.name == carts[i].name) {
+                            temp = true;
+                            break;
+                        }
+                    }
+                    if (temp == false) {
+                        ele["quantity"] = input.value
+                        carts.push(ele)
+                        alert('Product added to Cart')
+                    } else if (temp === true) {
+                        alert("Product Already in Cart")
+                    }
+                }
+                if (carts.length === 0) {
+                    ele["quantity"] = input.value
+                    carts.push(ele)
+                }
+                localStorage.setItem('cartitems', JSON.stringify(carts))
+                console.log(input.value);
+            })
+            select.addEventListener('change', () => {
+                let val = select.value
+                if (val == 20) {
+
+                }
+            })
+            maindiv.addEventListener('mouseenter', (e) => {
+                maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
+                console.log('dd');
+            })
+            maindiv.addEventListener('mouseleave', () => {
+                maindiv.style.boxShadow = "none"
+            })
+            //***css***//
+            addbutton.style.backgroundColor = "red"
+            addbutton.style.color = "white"
+            addbutton.style.border = "none"
+            addbutton.style.borderRadius = "5px"
+            maindiv.style.borderRadius = '5px'
+            discoutdiv.style.textAlign = "end"
+            maindiv.style.padding = "10%"
+            discoutdiv.style.color = "rgba(255, 0, 0, 0.422)"
+            discoutdiv.style.marginBottom = "5%"
+            quantitydiv.style.display = 'flex'
+            quantitydiv.style.paddingRight = '25%'
+            div1.style.padding = '0% 5%'
+            addbutton.style.padding = '0% 10%'
+            input.style.width = '80%'
+            //***css***//
+
+            discoutp.innerText = `${ele.discount}% discount`
+            img.setAttribute('src', ele.image)
+            qp.innerText = 'Qty'
+            brand.innerText = ele.brand
+            name.innerText = ele.name
+            o1.innerText = '10% discount'
+            o1.value = '10'
+            o2.value = '20'
+            o2.innerText = '20% discout'
+            price.innerText = `MRP:-${ele.mrp}`
+            time.innerText = 'Standard Delivery: Today 8:00AM - 10:00AM'
+            input.setAttribute('placeholder', "1")
+            addbutton.innerText = 'AddItem'
+
+
+
+            //***appending***//
+            discoutdiv.append(discoutp)
+            select.append(o1, o2)
+            div1.append(qp)
+            div2.append(input)
+            div3.append(addbutton)
+            quantitydiv.append(div1, div2, div3)
+            bottomdiv.append(price, time, quantitydiv)
+            maindiv.append(discoutdiv, img, brand, name, select, bottomdiv)
+            fpdiv2.append(maindiv)
+        });
+    }
+
+</script>
+
+</html>
