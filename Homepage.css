@@ -1,0 +1,282 @@
+*{
+    padding:0 ;
+    margin:0;
+}
+.container{
+    width:100%;
+    /* position: absolute; */
+   
+    
+    overflow: hidden;
+}
+.wrapper{
+    width:100%;
+    display: flex;
+    animation: slide 10s infinite;
+}
+@keyframes slide{
+    0%{
+        transform:translateX(0);
+    }
+    25%{
+        transform:translateX(0);
+    }
+    30%{
+        transform:translateX(-100%);
+    }
+        50%{
+        transform:translateX(-100%);
+    }
+    55%{
+        transform:translateX(-200%);
+    }
+    75%{
+        transform:translateX(-200%);
+    }
+    80%{
+        transform:translateX(-300%);
+    }
+    100%{
+        transform:translateX(-300%);
+    }
+}
+.wrapper>img{
+    width:100%;
+}
+.slide1{
+    width:80%;
+    height: auto;
+    margin-top:10px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:20px;
+}
+.slidecard{
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: aliceblue;
+    padding:20px;
+    margin-bottom: 50px;
+}
+.slidecard> button{
+    background-color: rgb(255, 217, 46);
+    border: none;
+    padding:3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.slidecard> button:hover{
+    background-color: rgb(244, 255, 94);
+    cursor: pointer;
+}
+.slidecard:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* medium-screen */
+@media screen and (min-width:651px) and (max-width:1024px){
+    .slide1{
+        grid-template-columns: repeat(3,1fr);
+    }
+    #box{
+        grid-template-columns: repeat(3,1fr);
+
+    }
+    .bank{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .slide2{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+/* small-screen */
+@media screen and (min-width:320px) and (max-width:650px){
+    .slide1{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #box{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .bank{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .slide2{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+#box{
+    width:80%;
+    margin:auto;
+    margin-top:50px;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+#box button{
+margin:auto;
+width:170px;
+height:56px;
+background-color: rgb(177, 190, 202);
+color:black;
+border:none;
+font-size:18px;
+font-weight: 700;
+text-align: center;
+border-radius: 5px;
+
+}
+#box button:hover{
+    cursor: pointer;
+}
+#box :nth-child(2){
+background-color: rgb(18, 0, 59);
+color: white;
+}
+#box :nth-child(3){
+background-color: rgb(52, 100, 59);
+color: white;
+}
+.head1{
+text-align: center;
+margin-top: 30px;
+margin-bottom: 20px;
+font-size: 30px;
+}
+
+.bank{
+width:80%;
+height:250px;
+margin:auto;
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap:20px;
+
+}
+.bank-card{
+width:100%;
+height:100%;
+}
+.bank-card img:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+
+.popular{
+    width:80%;
+    height:250px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+    
+    }
+    .popular-card{
+    width:100%;
+    height:100%;
+    }
+    .popular-card img{
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+    }
+    .popular-card img:hover{
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+
+    .offers{
+        width:80%;
+        height:250px;
+        margin:auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap:20px;
+        
+        }
+        .offers-card{
+        width:100%;
+        height:100%;
+        }
+        .offers-card img{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    
+        }
+        .offers-card img:hover{
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        .fruit{
+            width:80%;
+            height:250px;
+            margin:auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:20px;
+            
+            }
+            .fruit-card{
+            width:100%;
+            height:100%;
+            }
+            .fruit-card img{
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        
+            }
+            .fruit-card img:hover{
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+
+
+            .slide2{
+                width:80%;
+                height: auto;
+                margin-top:10px;
+                margin:auto;
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                gap:20px;
+            }
+            .slide2card{
+                width:100%;
+                text-align: center;
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                background-color: aliceblue;
+                
+                
+            }
+
+            .slide2card:hover{
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+
+
+            .staple{
+                width:80%;
+                height: auto;
+                margin-top:10px;
+                margin:auto;
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                gap:20px;
+            }
+            .staplecard{
+                width:100%;
+                text-align: center;
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                background-color: aliceblue;
+                
+                margin-bottom: 50px;
+            }
+
+            .staplecard:hover{
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
