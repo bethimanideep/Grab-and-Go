@@ -1,0 +1,21 @@
+#dashboard {
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(225, 244, 244);
+    /* border: 1px solid red; */
+}
+
+td {
+    /* border: 1px solid red; */
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.otpform {
+    position: absolute;
+    opacity: 0;
+    left: 40%;
+    top: 25%
+}

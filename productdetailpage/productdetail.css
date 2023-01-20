@@ -391,3 +391,31 @@ a,
     display: block;
     margin-top: 10px;
 }
+
+.ratingandreview {
+    margin: 20px;
+}
+
+.rate {
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.write {
+    margin-top: 20px;
+}
+
+.content {
+    border: 1px solid rgb(192, 188, 188);
+    border-radius: 6px;
+    padding: 40px;
+    text-align: center;
+    font-size: small;
+}
+
+
+.content>img {
+    width: 8%;
+    margin: auto;
+    display: block;
+}

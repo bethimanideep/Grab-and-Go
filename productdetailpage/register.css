@@ -1,0 +1,21 @@
+#register {
+    /* border: 1px solid red; */
+    width: 33%;
+    margin: auto;
+    margin-top: 6%;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(225, 244, 244);
+    border-radius: 5px;
+}
+
+#btn {
+    display: block;
+    margin: auto;
+    background-color: teal;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: white;
+}
