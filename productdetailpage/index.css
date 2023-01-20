@@ -1,0 +1,33 @@
+.nav {
+    height: 51px;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    padding: 10px 0;
+    background-color: rgb(143, 209, 209);
+}
+
+.nav a {
+
+    padding: 11px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+.nav a:hover {
+    background-color: teal;
+    color: white
+}
+
+h1 {
+
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 4rem;
+    color: rgb(59, 154, 160);
+}

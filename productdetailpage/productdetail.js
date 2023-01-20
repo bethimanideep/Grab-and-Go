@@ -14,6 +14,13 @@ if (product.length == 0) {
     }
 }
 
+let logineduser = {
+    Unique_id: 12,
+    Name: "Anu",
+    email: "a@gmail.com",
+    pass: 123,
+}
+
 
 
 const prodcont = document.querySelector(".prod_cont")
@@ -183,12 +190,20 @@ inc.addEventListener("click", () => {
     //update obj with original obj
 })
 
+
+
 saveit.addEventListener("click", () => {
     let cartitem = JSON.parse(localStorage.getItem("cartitem")) || []
     product.quan = +quant.innerHTML
     cartitem = cartitem.filter(item => item.name != product.name)        //update obj with original obj and id
     cartitem.push(product)                //update obj with original obj
     localStorage.setItem("cartitem", JSON.stringify(cartitem))
+
+    let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.Unique_id}`)) || []  /////////////////////////////////
+    // product.quan = +quant.innerHTML
+    loggeduser = loggeduser.filter(item => item.name != product.name)        //update obj with original obj and id
+    loggeduser.push(product)                //update obj with original obj
+    localStorage.setItem(`${logineduser.Unique_id}`, JSON.stringify(loggeduser))////////////////////////
     alert("Successfully added to cart")
     quant.innerHTML = 1
 })
@@ -283,3 +298,6 @@ function rendercard(data) {
 
     });
 }
+
+
+

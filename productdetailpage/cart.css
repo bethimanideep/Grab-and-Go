@@ -1,0 +1,20 @@
+#vaccinated {
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(225, 244, 244);
+    /* border: 1px solid red; */
+}
+
+td {
+    /* border: 1px solid red; */
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.quant {
+    font-size: small;
+    color: rgb(138, 136, 136);
+
+}
