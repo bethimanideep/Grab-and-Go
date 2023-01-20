@@ -32,6 +32,6 @@ let navbar = () => {
     </div>
 </div>
     `
-};
+}
 
-export { navbar };
+export default navbar;

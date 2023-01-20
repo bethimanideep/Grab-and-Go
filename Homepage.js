@@ -94,6 +94,11 @@ let  products = [{
         let image = document.createElement("img");
         image.setAttribute("src",ele.image);
 
+        image.addEventListener("click",()=>{
+            localStorage.setItem("productdetails", JSON.stringify(ele));
+            window.location.href = "productdetail.html";
+        })
+
         let name = document.createElement("h3");
         name.innerText = ele.name;
 
@@ -106,31 +111,30 @@ let  products = [{
         let time = document.createElement("p");
         time.innerText = "09:00AM to 12:00PM";
 
+        let input = document.createElement('input');
+        input.value = 1;
+        input.style.width = '20%';
+
         let btn = document.createElement("button");
         btn.innerText = "ADD";
 
         
         btn.addEventListener("click",()=>{
             let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
-            cartitem = cartitem.filter(item => item.name != products.name)        //update obj with original obj and id
-            cartitem.push(products[index])                //update obj with original obj
+            
+            ele["quantity"] = input.value
+            products.push(ele)      
+            cartitem.push(products[index])               
             localStorage.setItem("cartitem", JSON.stringify(cartitem))
             alert("Successfully added to cart");
         })
+       
 
-        div.append(image,name,price,text,time,btn);
+        div.append(image,name,price,text,time,input,btn);
         container.append(div);
 
     })
-// addBtn1.addEventListener("click",()=>{
 
-//     let cartitem =  [];
-//     cartitem = cartitem.filter(item => item.name != product1.name)        //update obj with original obj and id
-//     cartitem.push(product1)                //update obj with original obj
-//     localStorage.setItem("cartitem", JSON.stringify(cartitem))
-//     alert("Successfully added to cart")
-    
-// })
 
 
 products2.forEach((ele,index)=>{
@@ -138,6 +142,11 @@ products2.forEach((ele,index)=>{
 
     let image = document.createElement("img");
     image.setAttribute("src",ele.image);
+
+    image.addEventListener("click",()=>{
+        localStorage.setItem("productdetails", JSON.stringify(ele));
+        window.location.href = "productdetail.html";
+    })
 
     let name = document.createElement("h3");
     name.innerText = ele.name;
@@ -151,19 +160,29 @@ products2.forEach((ele,index)=>{
     let time = document.createElement("p");
     time.innerText = "09:00AM to 12:00PM";
 
+    let qp = document.createElement('p')
+    qp.innerText = "Qty";
+
+    let input = document.createElement('input');
+    input.value = 1;
+    input.style.width = '20%';
+    
+
     let btn = document.createElement("button");
     btn.innerText = "ADD";
 
     
     btn.addEventListener("click",()=>{
         let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
-        cartitem = cartitem.filter(item => item.name != products2.name)        //update obj with original obj and id
-        cartitem.push(products2[index])                //update obj with original obj
+        
+        ele["quantity"] = input.value
+        products2.push(ele)      
+        cartitem.push(products2[index])               
         localStorage.setItem("cartitem", JSON.stringify(cartitem))
         alert("Successfully added to cart");
     })
 
-    div.append(image,name,price,text,time,btn);
+    div.append(image,name,price,text,time,input,btn);
     container2.append(div);
 
 })
