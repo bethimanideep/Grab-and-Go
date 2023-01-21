@@ -68,7 +68,7 @@ async function signin(obj){
     console.log(obj);
 
     try {
-        let login_request = await fetch(`${baseURL}/users/11`,{
+        let login_request = await fetch(`${baseURL}/users`,{
             method : "GET",
             // body : JSON.stringify(obj),
             headers : {
@@ -81,6 +81,11 @@ async function signin(obj){
        if(userdata.email == obj.email && userdata.password == obj.password ){
         alert('Logged-in Successfully 🙂')
         window.location.href = "../index.html"
+        localStorage.setItem("logineduser",JSON.stringify(userdata));
+
+
+       
+
        }else if (userdata.email !== obj.email ){
         alert('User not found 😞')
        }else{
@@ -94,6 +99,14 @@ async function signin(obj){
         alert("wrong username/password. Please try again.");
     }
 }
+
+
+ // document.querySelector("form").addEventListener("click", () => {
+
+        //     localStorage.setItem("userDetails",JSON.stringify)
+        
+        // }
+
 
 
 
