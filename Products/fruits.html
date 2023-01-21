@@ -88,56 +88,53 @@
                     <h4>Brand</h4>
                     <div>
                         <input type="text" placeholder="Search by Brand">
-                        <button>Search</button>
-                        <div><input type="checkbox"> Fresho</div>
-                        <div><input type="checkbox"> BB Combo</div>
-                        <div><input type="checkbox"> Organic</div>
-                        <div><input type="checkbox"> USA</div>
-                        <div><input type="checkbox"> Gopalan Organic</div>
-                        <div><input type="checkbox"> Hoovu Fresh</div>
+                        <button id="searchbtn">Search</button>
+                        <div><input name="box" type="checkbox" value="fresho"> Fresho</div>
+                        <div><input name="box" type="checkbox" value="bbcombo"> BB Combo</div>
+                        <div><input name="box" type="checkbox" value="organic"> Organic</div>
+                        <div><input name="box" type="checkbox" value="usa"> USA</div>
                     </div>
                 </div>
                 <div>
                     <h4>Seasonal</h4>
                     <div>
-                        <div><input type="checkbox">Summer Fruits</div>
-                        <div><input type="checkbox">Summer Veggies</div>
-                        <div><input type="checkbox">Winter Fruits</div>
-                        <div><input type="checkbox">Winter Veggies</div>
+                        <div><input name="box" value="summer" type="checkbox">Summer Fruits</div>
+                        <div><input name="box" value="winter" type="checkbox">Summer Veggies</div>
+                        <div><input name="box" value="rainy" type="checkbox">Winter Fruits</div>
+                        <div><input name="box" value="winter" type="checkbox">Winter Veggies</div>
                     </div>
                 </div>
                 <div>
                     <h4>Country of Origin</h4>
                     <div>
-                        <div><input type="checkbox">India</div>
-                        <div><input type="checkbox">Australia</div>
-                        <div><input type="checkbox">China</div>
+                        <div><input name="box" value="india" type="checkbox">India</div>
+                        <div><input name="box" value="australia" type="checkbox">Australia</div>
+                        <div><input name="box" value="china" type="checkbox">China</div>
                     </div>
                 </div>
                 <div>
                     <h4>Price</h4>
                     <div>
-                        <div><input type="checkbox">Rs 21 to Rs 50 <span id="a"></span></div>
-                        <div><input type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
-                        <div><input type="checkbox">Rs 101 to Rs 200 <span id="c"></span></div>
-                        <div><input type="checkbox">Rs 201 to Rs 500 <span id="d"></span></div>
-                        <div><input type="checkbox">More than Rs 501 <span id="e"></span></div>
+                        <div><input name="box" value="0" type="checkbox">Rs 0 to Rs 50 <span id="a"></span></div>
+                        <div><input name="box" value="51" type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
+                        <div><input name="box" value="101" type="checkbox">Rs 101 to Rs 200 <span id="c"></span></div>
+                        <div><input name="box" value="201" type="checkbox">More than Rs 501 <span id="e"></span></div>
                     </div>
                 </div>
                 <div>
                     <h4>Discount</h4>
                     <div>
-                        <div><input type="checkbox">10% - 15%</div>
-                        <div><input type="checkbox">15% - 25% </div>
-                        <div><input type="checkbox">More than 25% </div>
+                        <div><input name="box" value="10" type="checkbox">10% - 15%</div>
+                        <div><input name="box" value="20" type="checkbox">15% - 25% </div>
+                        <div><input name="box" value="30" type="checkbox">More than 25% </div>
                     </div>
                 </div>
                 <div>
                     <h4>Pack Size</h4>
                     <div>
-                        <div><input type="checkbox">100gm</div>
-                        <div><input type="checkbox">500gm</div>
-                        <div><input type="checkbox">1kg</div>
+                        <div><input name="box" value="100gm" type="checkbox">100gm</div>
+                        <div><input name="box" value="500gm" type="checkbox">500gm</div>
+                        <div><input name="box" value="1kg" type="checkbox">1kg</div>
                     </div>
                 </div>
             </div>
@@ -166,7 +163,11 @@
     let fpdiv2 = document.getElementById("fpdiv2")
     let sortprice = document.getElementById("sortprice")
     let carts = JSON.parse(localStorage.getItem('cartitems')) || []
-    let products=JSON.parse(localStorage.getItem('productdetails'))||[]
+    let products = JSON.parse(localStorage.getItem('productdetails')) || []
+    let checkboxes = document.getElementsByName('box')
+    let searchbtn = document.getElementById("searchbtn")
+
+
 
 
     fetch("https://63c6633cdcdc478e15c05f89.mockapi.io/products")
@@ -174,6 +175,100 @@
         .then((res) => res.json())
         .then((data) => {
             let arr = data[0].fruits
+            console.log(arr);
+            checkboxes.forEach(function (checkbox) {
+                checkbox.addEventListener('change', function () {
+                    temp =
+                        Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
+                            .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+                            .map(i => i.value)
+
+
+
+                    console.log(temp)
+                    if (temp.includes('fresho') || temp.includes('bbcombo') || temp.includes('organic') || temp.includes('usa')) {
+                        let dd = []
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] === 'fresho' || temp[i] === 'bbcombo' || temp[i] === 'organic' || temp[i] === 'usa') {
+                                arr.filter((ele) => {
+                                    if (temp[i] == ele.brand) {
+                                        dd.push(ele)
+                                    }
+                                })
+                            }
+                        }
+                        console.log(dd)
+                        let a = []
+
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] !== 'fresho' || temp[i] !== 'bbcombo' || temp[i] !== 'organic' || temp[i] !== 'usa') {
+                                dd.forEach((ele) => {
+                                    if (temp[i] == ele.packsize || temp[i] == ele.season || temp[i] == ele.country || temp[i] == ele.discount) {
+                                        a.push(ele)
+                                    }
+                                })
+                            }
+                        }
+                        if (a.length === 0) {
+                            createdata(dd)
+                        } else {
+                            createdata(a)
+                        }
+                    } else {
+                        let a = []
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] !== 'fresho' || temp[i] !== 'bbcombo' || temp[i] !== 'organic' || temp[i] !== 'usa') {
+                                arr.forEach((ele) => {
+                                    if (temp[i] == ele.packsize || temp[i] == ele.season || temp[i] == ele.country || temp[i] == ele.discount) {
+                                        a.push(ele)
+                                    }
+                                })
+                            }
+                        }
+                        if (a.length === 0) {
+                            createdata(arr)
+                        } else {
+                            let p=[]
+                            for (let j = 0; j < temp.length; j++) {
+                                if (temp[j] == 0) {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp>=0||ele.mrp<=50) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }else if (temp[j] == 51) {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp>=51||ele.mrp<=100) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }else if (temp[j] == 101) {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp>=101||ele.mrp<=200) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }else if (temp[j] == '201') {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp>=201) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            }console.log(p);
+                            if(p.length!==0){
+                                createdata(p)
+                            }else{
+                                createdata(a)
+                            }
+                        }
+                    }
+                    if (temp.length === 0) {
+                        createdata(arr)
+                    }
+                })
+            });
+
 
             sortprice.addEventListener('change', () => {
                 let val = sortprice.value
@@ -190,7 +285,6 @@
                 } else if (val == 'alpha') {
                     let temp = arr.sort((a, b) => {
                         if (a.name < b.name) return -1
-
                     })
                     createdata(temp)
                 } else {
@@ -223,10 +317,9 @@
             let qp = document.createElement('p')
             let addbutton = document.createElement('button')
             input.value = 1
-            img.addEventListener('click',()=>{
-                ele["quantity"] = input.value
-                localStorage.setItem('productdetails',JSON.stringify(ele))
-                window.location.href="./productdetail.html"
+            img.addEventListener('click', () => {
+                localStorage.setItem('productdetails', JSON.stringify(ele))
+                window.location.href = "../productdetail.html"
             })
 
             addbutton.addEventListener('click', () => {
@@ -250,7 +343,7 @@
                     ele["quantity"] = input.value
                     carts.push(ele)
                 }
-                localStorage.setItem('cartitems', JSON.stringify(carts))
+                localStorage.setItem('cartitem', JSON.stringify(carts))
                 console.log(input.value);
             })
             select.addEventListener('change', () => {
@@ -261,7 +354,6 @@
             })
             maindiv.addEventListener('mouseenter', (e) => {
                 maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
-                console.log('dd');
             })
             maindiv.addEventListener('mouseleave', () => {
                 maindiv.style.boxShadow = "none"
