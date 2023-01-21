@@ -68,16 +68,15 @@ function display(ele) {
       // console.log(e.otp)
       let dashboard = JSON.parse(window.localStorage.getItem("myRegisterData")) || []
 
-      let newdata = dashboard.filter(elem => elem.Unique_id != e.Unique_id)
+      let newdata = dashboard.filter(elem => elem.email != e.email)
       console.log(newdata)
       localStorage.setItem("myRegisterData", JSON.stringify(newdata));
       container.innerHTML = null
       display(newdata)
-
     })
 
     cartitembtn.addEventListener("click", () => {
-      let torender = JSON.parse(window.localStorage.getItem(`${e.Unique_id}`)) || []
+      let torender = JSON.parse(window.localStorage.getItem(`${e.email}`)) || []
       localStorage.setItem("torender", JSON.stringify(torender))
       window.location.href = "./cart.html"
     })

@@ -15,9 +15,9 @@ if (product.length == 0) {
 }
 
 let logineduser = {
-    Unique_id: 12,
+    Unique_id: 123,
     Name: "Anu",
-    email: "a@gmail.com",
+    email: "bittu.anurag@gmail.com",
     pass: 123,
 }
 
@@ -199,11 +199,11 @@ saveit.addEventListener("click", () => {
     cartitem.push(product)                //update obj with original obj
     localStorage.setItem("cartitem", JSON.stringify(cartitem))
 
-    let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.Unique_id}`)) || []  /////////////////////////////////
+    let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.email}`)) || []  /////////////////////////////////
     // product.quan = +quant.innerHTML
     loggeduser = loggeduser.filter(item => item.name != product.name)        //update obj with original obj and id
     loggeduser.push(product)                //update obj with original obj
-    localStorage.setItem(`${logineduser.Unique_id}`, JSON.stringify(loggeduser))////////////////////////
+    localStorage.setItem(`${logineduser.email}`, JSON.stringify(loggeduser))////////////////////////
     alert("Successfully added to cart")
     quant.innerHTML = 1
 })
@@ -280,7 +280,15 @@ function rendercard(data) {
             cartitem = cartitem.filter(item => item.name != element.name)        //update obj with original obj and id
             cartitem.push(element)                //update obj with original obj
             localStorage.setItem("cartitem", JSON.stringify(cartitem))
+
+            let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.email}`)) || []  /////////////////////////////////
+            // product.quan = +quant.innerHTML
+            element.quan = 1
+            loggeduser = loggeduser.filter(item => item.name != element.name)        //update obj with original obj and id
+            loggeduser.push(element)                //update obj with original obj
+            localStorage.setItem(`${logineduser.email}`, JSON.stringify(loggeduser))////////////////////////
             alert("Successfully added to cart")
+
         })
 
         card.append(img, brand, name, table, add)
