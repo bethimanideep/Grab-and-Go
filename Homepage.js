@@ -4,6 +4,7 @@ let container2 = document.querySelector(".slide3");
 
 let  products = [{
     "brand": "freesho",
+    "discount":10,
     "mrp": 97,
     "name": "Paneer",
     "image": "https://www.bigbasket.com/media/uploads/p/s/264679_4-milky-mist-paneer-premium-fresh.jpg",
@@ -13,6 +14,8 @@ let  products = [{
 
  {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 99,
     "name": "Sandwitch-Bread",
     "image": "https://www.bigbasket.com/media/uploads/p/s/1204352_1-fresho-sandwich-bread-white-chemical-free-400g-eggs-regular-6pcs.jpg",
@@ -20,6 +23,8 @@ let  products = [{
     "packsize": "500gm"
 }, {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 204,
     "name": "Butter",
     "image": "https://www.bigbasket.com/media/uploads/p/s/1204991_3-amul-butter-pasteurized.jpg",
@@ -28,6 +33,8 @@ let  products = [{
 },
 {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 97,
     "name": "Paneer",
     "image": "https://www.bigbasket.com/media/uploads/p/s/264679_4-milky-mist-paneer-premium-fresh.jpg",
@@ -36,6 +43,8 @@ let  products = [{
 },
  {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 33,
     "name": "Onion(Loose)",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000148_30-fresho-onion.jpg",
@@ -45,6 +54,8 @@ let  products = [{
 
  let products2 = [{
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 20.50,
     "name": "Cauliflower",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000074_19-fresho-cauliflower.jpg",
@@ -54,6 +65,8 @@ let  products = [{
 
  {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 9,
     "name": "Carrot-Orane(Loose)",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000071_14-fresho-carrot-orange.jpg",
@@ -63,6 +76,8 @@ let  products = [{
 
  {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 33,
     "name": "Capsicum-Green(Loose)",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000069_20-fresho-capsicum-green.jpg",
@@ -72,6 +87,8 @@ let  products = [{
 
 , {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 8.50,
     "name": "Coriander-Leaves",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000097_19-fresho-coriander-leaves.jpg",
@@ -81,6 +98,8 @@ let  products = [{
 
  {
     "brand": "freesho",
+    "discount":10,
+
     "mrp": 31,
     "name": "Ladies'Fingers(Loose)",
     "image": "https://www.bigbasket.com/media/uploads/p/s/10000144_13-fresho-ladies-finger.jpg",
@@ -145,7 +164,7 @@ products2.forEach((ele,index)=>{
 
     image.addEventListener("click",()=>{
         localStorage.setItem("productdetails", JSON.stringify(ele));
-        window.location.href = "productdetail.html";
+        window.location.href = "./productdetailpage/productdetail.html";
     })
 
     let name = document.createElement("h3");
