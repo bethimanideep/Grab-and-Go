@@ -223,6 +223,7 @@ saveit.addEventListener("click", () => {
         },
         body: JSON.stringify(obj)
     })
+    location.reload()
     alert("Successfully added to cart");
     quant.innerHTML = 1
 
@@ -311,6 +312,7 @@ function rendercard(data) {
                 },
                 body: JSON.stringify(obj)
             })
+            location.reload()
             alert("Successfully added to cart");
 
         })
