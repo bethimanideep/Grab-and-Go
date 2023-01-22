@@ -1,7 +1,7 @@
 let navbar = () => {
     return ` <div id="nav">
     <div class="first-box">
-        <div class="logo"><a href="/index.html"><img src="/images/logo.png" alt=""></a></div>
+        <div class="logo"><a href="/index.html"><img src="/logo.png" alt=""></a></div>
         <div class="category-drop"><p>SHOP BY CATAGORY<i class="fas fa-angle-down"></i></p>
         <div class="dropdown">
            <ul type = "none">
