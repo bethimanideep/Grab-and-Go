@@ -21,7 +21,6 @@ let navbar = () => {
                <li><a href="#">View All</a></li> 
            </ul>
         </div>
-
         </div>
     </div>
     <div class="Second-box">
