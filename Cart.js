@@ -1,9 +1,11 @@
-let carts = JSON.parse(localStorage.getItem('cartitem')) || []
+let carts = JSON.parse(localStorage.getItem('logineduser')) || []
 let tbody = document.querySelector("tbody")
 let chan = document.getElementById('chan')
 let fin = document.getElementById('fin')
-
-createtbody(carts)
+let item = document.getElementById('Item')
+item.innerHTML=carts[0].cart.length
+console.log(carts[0].cart);
+createtbody(carts[0].cart)
 function createtbody(data) {
     tbody.innerHTML = null
     data.forEach(function (ele, i) {
@@ -51,8 +53,8 @@ function createtbody(data) {
             td4.innerText = sum
             chan.innerText = Number(chan.innerText) + Number(ele.mrp)
             fin.innerText = chan.innerText
-            carts[mrp] = sum
-            localStorage.setItem('cartitem', JSONj.stringify(carts))
+            // carts[mrp] = sum
+            // localStorage.setItem('cartitem', JSONj.stringify(carts))
 
         })
         minus.addEventListener('click', () => {
@@ -75,17 +77,17 @@ function createtbody(data) {
 
 
         del.addEventListener("click", () => {
-            let arr = carts.filter((ele, index) => {
+            let arr = carts[0].cart.filter((ele, index) => {
                 if (i == index) {
                     return false
                 } else {
                     return true
                 }
             })
-            carts = arr
-            localStorage.setItem('cartitem', JSON.stringify(carts))
+            carts[0].cart = arr
+            localStorage.setItem('logineduser', JSON.stringify(carts))
 
-            createtbody(carts)
+            createtbody(carts[0].cart)
         })
 
     })
@@ -96,7 +98,7 @@ document.querySelector("#butt0").addEventListener("click", function () {
     window.location.reload();
 });
 document.querySelector("#butt1").addEventListener("click", function () {
-    window.location.replace("Products/Allproduct.html");
+    window.location.href="Products/Allproduct.html"
 });
 
 document.querySelector("#check").addEventListener("click", function () {
