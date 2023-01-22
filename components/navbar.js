@@ -2,7 +2,7 @@ let navbar = () => {
     const username = JSON.parse(localStorage.getItem("logineduser")) || []
     // alert(username[0].name)
     console.log(username)
-    let name = "Guest"
+    let name = "Login/signup"
     let item = 0
     if (username.length != 0) {
         name = username[0].name
