@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
+
     <style>
         * {
             margin: 0;
@@ -68,12 +70,10 @@
         }
 
         #fpdiv1 {
-            margin: 5% 0%;
-            width: 25%;
-            background-color: whitesmoke;
+            width: 45%;
+            /* background-color: whitesmoke; */
             color: black;
-            padding: 3%;
-            border-radius: 10px;
+            /* padding: 3% 0% 3% 0%; */
 
         }
 
@@ -83,6 +83,8 @@
 
         #fruitproducts {
             display: flex;
+            margin: 5% 0%;
+
         }
 
 
@@ -110,11 +112,56 @@
             grid-template-columns: repeat(4, 1fr);
             padding: 2%;
             row-gap: 50px;
+            column-gap: 10px;
+            height: 1000px;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
+
+        /* #fpdiv2 >div{
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        } */
 
         #countandsort {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+        }
+
+        #fpdiv2>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        #fpdiv2>div {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+
+        #fpdiv1 h3 {
+            color: rgba(0, 0, 255, 0.474);
+        }
+
+        #fpdiv1 {
+            border-right: 1px solid rgba(0, 0, 0, 0.434);
+        }
+
+        #fpdiv2::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        #fpdiv2::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        #fpdiv2::-webkit-scrollbar-thumb {
+            background: rgba(255, 0, 0, 0.409);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        #fpdiv2::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 255, 0.474);
         }
     </style>
 </head>
@@ -146,7 +193,7 @@
         <div id="fruitproducts">
             <div id="fpdiv1">
                 <div>
-                    <h4>Category</h4>
+                    <h3>Category</h3>
                     <a href="Allproduct.html">All products</a>
                     <a href="fruits.html">Fruits and Vegetables</a>
                     <a href="bevarages.html">Bevarages</a>
@@ -156,18 +203,17 @@
                     <a href="bakery.html">Bekary</a>
                 </div>
                 <div>
-                    <h4>Brand</h4>
+                    <h3>Brand</h3>
                     <div>
-                        <input type="text" placeholder="Search by Brand">
-                        <button id="searchbtn">Search</button>
                         <div><input name="box" type="checkbox" value="fresho"> Fresho</div>
-                        <div><input name="box" type="checkbox" value="bbcombo"> BB Combo</div>
-                        <div><input name="box" type="checkbox" value="organic"> Organic</div>
-                        <div><input name="box" type="checkbox" value="usa"> USA</div>
+                        <div><input name="box" type="checkbox" value="bb Combo"> BB Combo</div>
+                        <div><input name="box" type="checkbox" value="Aashirvaad"> Aashirvaad</div>
+                        <div><input name="box" type="checkbox" value="bbroyal"> bbroyal</div>
+                        <div><input name="box" type="checkbox" value="Sunpure"> Sunpure</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Seasonal</h4>
+                    <h3>Seasonal</h3>
                     <div>
                         <div><input name="box" value="summer" type="checkbox">Summer Fruits</div>
                         <div><input name="box" value="winter" type="checkbox">Summer Veggies</div>
@@ -176,7 +222,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4>Country of Origin</h4>
+                    <h3>Country of Origin</h3>
                     <div>
                         <div><input name="box" value="india" type="checkbox">India</div>
                         <div><input name="box" value="australia" type="checkbox">Australia</div>
@@ -184,7 +230,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4>Price</h4>
+                    <h3>Price</h3>
                     <div>
                         <div><input name="box" value="0" type="checkbox">Rs 0 to Rs 50 <span id="a"></span></div>
                         <div><input name="box" value="51" type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
@@ -193,7 +239,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4>Discount</h4>
+                    <h3>Discount</h3>
                     <div>
                         <div><input name="box" value="10" type="checkbox">10% - 15%</div>
                         <div><input name="box" value="20" type="checkbox">15% - 25% </div>
@@ -201,7 +247,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4>Pack Size</h4>
+                    <h3>Pack Size</h3>
                     <div>
                         <div><input name="box" value="100gm" type="checkbox">100gm</div>
                         <div><input name="box" value="500gm" type="checkbox">500gm</div>
@@ -223,6 +269,9 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+
+        </div>
     </div>
 </body>
 <script>
@@ -234,8 +283,12 @@
     let searchbtn = document.getElementById("searchbtn")
     let counttext = document.getElementById("counttext")
     let sorting = document.getElementById('sorting')
+    let logineduser=JSON.parse(localStorage.getItem("logineduser"))||[]
+    let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
     let countandsort = document.getElementById("countandsort")
-
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].style.marginRight = '10px'
+    }
 
 
 
@@ -255,10 +308,10 @@
 
 
 
-                    if (temp.includes('fresho') || temp.includes('bbcombo') || temp.includes('organic') || temp.includes('usa')) {
+                    if (temp.includes('fresho') || temp.includes('bb Combo') || temp.includes('organic') || temp.includes('usa')|| temp.includes('Aashirvaad')|| temp.includes('bbroyal')|| temp.includes('Sunpure')) {
                         let dd = []
                         for (let i = 0; i < temp.length; i++) {
-                            if (temp[i] === 'fresho' || temp[i] === 'bbcombo' || temp[i] === 'organic' || temp[i] === 'usa') {
+                            if (temp[i] === 'fresho' || temp[i] === 'bb Combo' || temp[i] === 'organic' || temp[i] === 'usa'|| temp[i] === 'Aashirvaad'|| temp[i] === 'bbroyal'|| temp[i] === 'Sunpure') {
                                 arr.filter((ele) => {
                                     if (temp[i] == ele.brand) {
                                         dd.push(ele)
@@ -450,7 +503,7 @@
         counttext.innerHTML = null
         sorting.innerHTML = null
         countandsort.style.opacity = 1
-        let ct = document.createElement('h1')
+        let ct = document.createElement('h3')
         let span = document.createElement('span')
         let select = document.createElement('select')
         let o1 = document.createElement('option')
@@ -492,7 +545,7 @@
         for (let i = 0; i < data.length; i++) {
             c++
         }
-        ct.innerText = 'Oils, Masala, FoodGrains Products'
+        ct.innerText = 'Fruits and vegetables'
         span.innerText = `[${c}]`
         ct.append(span)
 
@@ -520,33 +573,26 @@
             input.value = 1
             img.addEventListener('click', () => {
                 localStorage.setItem('productdetails', JSON.stringify(ele))
-                window.location.href = "../productdetail.html"
+                window.location.href = "../productdetailpage/productdetail.html"
             })
 
             addbutton.addEventListener('click', () => {
-                if (carts.length > 0) {
-                    let temp = false;
-                    for (let i = 0; i < carts.length; i++) {
-                        if (ele.name == carts[i].name) {
-                            temp = true;
-                            break;
-                        }
-                    }
-                    if (temp == false) {
-                        ele["quantity"] = input.value
-                        carts.push(ele)
-                        alert('Product added to Cart')
-                    } else if (temp === true) {
-                        alert("Already in Cart")
-                    }
-                }
-                if (carts.length === 0) {
-                    ele["quantity"] = input.value
-                    carts.push(ele)
-                    alert('Product added to Cart')
-                }
-                localStorage.setItem('cartitem', JSON.stringify(carts))
-                console.log(input.value);
+                let loginedusercart = logineduser[0].cart.filter(item => item.name != ele.name)
+                ele.quantity = input.value
+                console.log(logineduser)
+                logineduser[0].cart = loginedusercart
+                logineduser[0].cart.push(ele)
+                localStorage.setItem("logineduser", JSON.stringify(logineduser))
+                let obj = { cart: logineduser[0].cart }
+                // logineduser[0].name = "Mani"
+                fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(obj)
+                })
+                alert("Successfully added to cart")
             })
             select.addEventListener('change', () => {
                 let val = select.value
@@ -554,32 +600,31 @@
 
                 }
             })
-            maindiv.addEventListener('mouseenter', (e) => {
-                maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
-            })
-            maindiv.addEventListener('mouseleave', () => {
-                maindiv.style.boxShadow = "none"
-            })
             //***css***//
+            // maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
             addbutton.style.backgroundColor = "red"
             addbutton.style.color = "white"
             addbutton.style.border = "none"
             addbutton.style.borderRadius = "5px"
-            maindiv.style.borderRadius = '5px'
+            maindiv.style.borderRadius = '10px'
             discoutdiv.style.textAlign = "end"
             maindiv.style.padding = "10%"
-            discoutdiv.style.color = "rgba(255, 0, 0, 0.422)"
+            discoutdiv.style.backgroundColor = "rgba(255, 0, 0, 0.422)"
+            discoutdiv.style.textAlign = "center"
             discoutdiv.style.marginBottom = "5%"
+            discoutdiv.style.borderRadius = "10px"
             quantitydiv.style.display = 'flex'
             quantitydiv.style.paddingRight = '25%'
             div1.style.padding = '0% 5%'
-            addbutton.style.padding = '0% 10%'
+            addbutton.style.padding = '10% 40%'
             input.style.width = '80%'
             discoutp.innerText = `${ele.discount}% discount`
+            discoutp.style.color = 'white'
             img.setAttribute('src', ele.image)
             qp.innerText = 'Qty'
             brand.innerText = ele.brand
             name.innerText = ele.name
+            name.style.color = 'red'
             price.innerText = `MRP:-${ele.mrp}`
             time.innerText = 'Standard Delivery: Today 8:00AM - 10:00AM'
             input.setAttribute('placeholder', "1")
@@ -591,18 +636,25 @@
             div3.append(addbutton)
             quantitydiv.append(div1, div2, div3)
             bottomdiv.append(price, time, quantitydiv)
-            maindiv.append(discoutdiv, img, brand, name, bottomdiv)
+            maindiv.append(discoutdiv, img, name, brand, bottomdiv)
             fpdiv2.append(maindiv)
         });
     }
 
+
+
+
 </script>
 <script type="module">
 
-    import  navbar  from "../components/navbar.js";
+    import {navbar} from "../components/navbar.js";
 
     let nav_div = document.querySelector("#nav");
     nav_div.innerHTML = navbar();
 </script>
-
+<script type="module">
+    import {footer} from "../components/footer.js"; 
+    let foot_div =document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+</script>
 </html>

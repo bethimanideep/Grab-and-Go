@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
+
     <style>
         * {
             margin: 0;
@@ -69,9 +71,7 @@
 
         #fpdiv1 {
             width: 25%;
-            /* background-color: whitesmoke; */
             color: black;
-            /* padding: 3% 0% 3% 0%; */
 
         }
 
@@ -111,7 +111,7 @@
             padding: 2%;
             row-gap: 50px;
             column-gap: 10px;
-            height: 700px;
+            height: 1000px;
             overflow-x: hidden;
             overflow-y: auto;
         }
@@ -266,6 +266,9 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+
+        </div>
     </div>
 </body>
 <script>
@@ -277,11 +280,12 @@
     let searchbtn = document.getElementById("searchbtn")
     let counttext = document.getElementById("counttext")
     let sorting = document.getElementById('sorting')
+    let logineduser=JSON.parse(localStorage.getItem("logineduser"))||[]
+    let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
     let countandsort = document.getElementById("countandsort")
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].style.marginRight = '10px'
     }
-
 
 
 
@@ -570,29 +574,22 @@
             })
 
             addbutton.addEventListener('click', () => {
-                if (carts.length > 0) {
-                    let temp = false;
-                    for (let i = 0; i < carts.length; i++) {
-                        if (ele.name == carts[i].name) {
-                            temp = true;
-                            break;
-                        }
-                    }
-                    if (temp == false) {
-                        ele["quantity"] = input.value
-                        carts.push(ele)
-                        alert('Product added to Cart')
-                    } else if (temp === true) {
-                        alert("Already in Cart")
-                    }
-                }
-                if (carts.length === 0) {
-                    ele["quantity"] = input.value
-                    carts.push(ele)
-                    alert('Product added to Cart')
-                }
-                localStorage.setItem('cartitem', JSON.stringify(carts))
-                console.log(input.value);
+                let loginedusercart = logineduser[0].cart.filter(item => item.name != ele.name)
+                ele.quantity = input.value
+                console.log(logineduser)
+                logineduser[0].cart = loginedusercart
+                logineduser[0].cart.push(ele)
+                localStorage.setItem("logineduser", JSON.stringify(logineduser))
+                let obj = { cart: logineduser[0].cart }
+                // logineduser[0].name = "Mani"
+                fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(obj)
+                })
+                alert("Successfully added to cart")
             })
             select.addEventListener('change', () => {
                 let val = select.value
@@ -647,12 +644,15 @@
 </script>
 <script type="module">
 
-    import navbar from "../components/navbar.js";
+    import {navbar} from "../components/navbar.js";
 
     let nav_div = document.querySelector("#nav");
     nav_div.innerHTML = navbar();
 </script>
+<script type="module">
+    import {footer} from "../components/footer.js"; 
+    let foot_div =document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+</script>
 
 </html>
-
-
