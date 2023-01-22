@@ -13,7 +13,7 @@ let navbar = () => {
     return ` <div id="nav">
     <div class="first-box">
 
-        <div class="logo"><a href="/index.html"><img src="logo.png" alt=""></a></div>
+        <div class="logo"><a href="index.html"><img src="logo.png" alt=""></a></div>
 
         <div class="category-drop"><p>SHOP BY CATAGORY<i class="fas fa-angle-down"></i></p>
         <div class="dropdown">
@@ -41,7 +41,7 @@ let navbar = () => {
     </div>
     <div class="third-box">
         <div class="bangalore"><i class="fas fa-map-marker-alt"></i> <span>560004, Bangalore <i class="fas fa-angle-down"></i></span> <i class="far fa-user"></i><a href="/routes/login.html" id ="login">${name}</a></div>
-        <button class="cart-btn"><a href="../Cart.html"><i class="fas fa-shopping-basket fa-3x"></i> <span><sup>My Basket</sup></span><p id="cartCount">${item} items</p></a></button>
+        <button class="cart-btn"><a href="cart.html"><i class="fas fa-shopping-basket fa-3x"></i> <span><sup>My Basket</sup></span><p id="cartCount">${item} items</p></a></button>
     </div>
 </div>
     `
