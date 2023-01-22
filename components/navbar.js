@@ -28,7 +28,7 @@ let navbar = () => {
         <div class="offer"><span class="offers"><i class="fas fa-tag"></i> OFFERS</span><span class="empty"></span></div>
     </div>
     <div class="third-box">
-        <div class="bangalore"><i class="fas fa-map-marker-alt"></i> <span>560004, Bangalore <i class="fas fa-angle-down"></i></span> <i class="far fa-user"></i><a href="login.html" id ="login">Login/Sign Up</a></div>
+        <div class="bangalore"><i class="fas fa-map-marker-alt"></i> <span>560004, Bangalore <i class="fas fa-angle-down"></i></span> <i class="far fa-user"></i><a href="/routes/login.html" id ="login">Login/Sign Up</a></div>
         <button class="cart-btn"><a href="cart.html"><i class="fas fa-shopping-basket fa-3x"></i> <span><sup>My Basket</sup></span><p id="cartCount">0 items</p></a></button>
     </div>
 </div>

@@ -1,46 +1,19 @@
-let baseURL =  `https://63c6633cdcdc478e15c05f89.mockapi.io`
-// console.log(user)
-// catch
-// get value make a obj
-
-// async function registerUser(obj){
-//     try {
-//         let registerUserRes = await fetch(`${baseURL}/users`,{
-//             method : 
-//         })
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
 
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
     let obj = {
-        'name' : document.querySelector("#name").value,
-        'email' : document.querySelector("#email").value,
-        'password' : document.querySelector("#password").value,
-        'confirmPassword' : document.querySelector("#confirm-password").value,
+        'name': document.querySelector("#name").value,
+        'email': document.querySelector("#email").value,
+        'password': document.querySelector("#password").value,
+        'confirmPassword': document.querySelector("#confirm-password").value,
+        'cart': [],
+        'address': []
     }
 
-    // let name = document.querySelector("#name").value;
-    // let email = document.querySelector("#email").value;
-    // let confirmEmail = document.querySelector("#confirm-email").value;
-    // let password = document.querySelector("#password").value;
-    // let confirmPassword = document.querySelector("#confirm-password").value;
-    // let mobile_number = document.querySelector("#phone_number").value;
-    // let referalCode = document.querySelector("#referal-code").value;
 
-    // let valid = validForm(name, email, confirmEmail, password, confirmPassword , mobile_number, referalCode);
-    // if (valid == true) {
-
-    //     registeration();
-
-    // // }
-    // if(validForm(obj)){
-    //    registeration(obj);
-    // } 
-      registeration(obj);
+    registeration(obj);
 });
 
 // --------------- Form Validation------------------
@@ -106,38 +79,29 @@ function validForm(obj) {
 
 
 
-async function registeration(obj){
-        try {
-            // let registeration_data={
-            //     name:document.querySelector("#name").value,
-            //     email:document.querySelector("#email").value,
-            //     password:document.querySelector("#password").value,
-            //     mobileNumber:document.querySelector("#phone_number").value,
-            //     referals:document.querySelector("#referal-code").value,
-            // }
+async function registeration(obj) {
+    try {
+   
+        let res = await fetch(`${baseURL}/users`, {
+            method: "POST",
+            headers: {
+                "content-Type": "application/json",
+            },
+            body: JSON.stringify(obj)
+        });
 
-
-            let res=await fetch(`${baseURL}/users`,{
-                method:"POST",
-                headers:{
-                    "content-Type":"application/json",
-                },
-                body: JSON.stringify(obj)
-            });
-
-            let register_request=await res.json();
-            if(res.ok){
-                alert('Signed-up Successfully 🙂')
-              window.location.href="../routes/login.html"
+        let register_request = await res.json();
+        if (res.ok) {
+            alert('Signed-up Successfully 🙂')
+            window.location.href = "../routes/login.html"
             // console.log(register_request)
-            }
-            else{
-                alert("Wrong request.");
-            }
-          } catch (error) {
-            alert("Something went wrong. Please try again later.");
-          }
-
-
+        }
+        else {
+            alert("Wrong request.");
+        }
+    } catch (error) {
+        alert("Something went wrong. Please try again later.");
     }
 
+
+}
