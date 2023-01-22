@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./productdetail.css">
+    <link rel="stylesheet" href="../style/productdetail.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
 </head>
 
 <body>
 
-
+    <div id="nav"></div>
 
     <section class="productdetail">
         <div class="none imgzoom">
@@ -288,8 +290,24 @@
 
     </section>
 
+    <div id="footer">
 
-    <script src="./productdetail.js"></script>
+    </div>
+
+
+    <script src="../Scripts/productdetail.js"></script>
 </body>
+
+<script type="module">
+
+    import navbar from "../components/navbar.js"
+    let nav_div = document.querySelector("#nav")
+    nav_div.innerHTML = navbar()
+
+    import { footer } from "../components/footer.js";
+    let foot_div = document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+
+</script>
 
 </html>
