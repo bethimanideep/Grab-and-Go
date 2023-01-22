@@ -2,6 +2,9 @@
 let container = document.querySelector(".slide1");
 let container2 = document.querySelector(".slide3");
 
+let logineduser=JSON.parse(localStorage.getItem("logineduser"))||[]
+    let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
+    
 let  products = [{
     "brand": "freesho",
     "discount":10,
@@ -123,7 +126,7 @@ let  products = [{
 
         image.addEventListener("click",()=>{
             localStorage.setItem("productdetails", JSON.stringify(ele));
-            window.location.href = "./productdetailpage/productdetail.html";
+            window.location.href = "./routes/productdetail.html";
         })
 
         let name = document.createElement("h3");
@@ -148,14 +151,31 @@ let  products = [{
 
         
         btn.addEventListener("click",()=>{
-            let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
+            // let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
             
-            ele["quantity"] = input.value
-            products.push(ele)      
-            cartitem.push(products[index])               
-            localStorage.setItem("cartitem", JSON.stringify(cartitem))
-            alert("Successfully added to cart");
-        })
+            // ele["quantity"] = input.value
+            // products.push(ele)      
+            // cartitem.push(products[index])               
+            // localStorage.setItem("cartitem", JSON.stringify(cartitem))
+            // alert("Successfully added to cart");
+                let loginedusercart = logineduser[0].cart.filter(item => item.name != ele.name)
+                ele.quantity = input.value
+                console.log(logineduser)
+                logineduser[0].cart = loginedusercart
+                logineduser[0].cart.push(ele)
+                localStorage.setItem("logineduser", JSON.stringify(logineduser))
+                let obj = { cart: logineduser[0].cart }
+                // logineduser[0].name = "Mani"
+                fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(obj)
+                })
+                alert("Successfully added to cart")
+            })
+            
        
 
         div.append(image,name,price,text,time,input,btn);
@@ -173,7 +193,7 @@ products2.forEach((ele,index)=>{
 
     image.addEventListener("click",()=>{
         localStorage.setItem("productdetails", JSON.stringify(ele));
-        window.location.href = "./productdetailpage/productdetail.html";
+        window.location.href = "./routes/productdetail.html";
     })
 
     let name = document.createElement("h3");

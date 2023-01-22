@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .container{
-    margin-top: 20px;
+    margin-top: 40px;
     width:100%;
     /* position: absolute; */
    
@@ -15,6 +15,7 @@
     width:100%;
     display: flex;
     animation: slide 10s infinite;
+
 }
 @keyframes slide{
     0%{
