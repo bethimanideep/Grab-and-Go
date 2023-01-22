@@ -9,6 +9,7 @@
     display: flex;
     width: 85%;
     height: 60%;
+    line-height: 2;
     margin:auto;
     padding-left: 10%;
     border-bottom: 1px dotted rgb(223, 215, 215);

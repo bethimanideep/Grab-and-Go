@@ -51,8 +51,17 @@ async function signin(obj) {
                 console.log(temp)
                 if (verify == true) {
                     localStorage.setItem('logineduser', JSON.stringify(temp))
-                    alert('Logged-in Successfully 🙂')
-                    window.location.href = "../index.html"
+                    alert('Logged-in Successfully 🙂');
+                    // let cartVar = document.getElementById("cartCount");
+                    // console.log(cartVar)
+                    // cartVar.innerHTML = logineduser[0].cart.length;
+                    // let logineduser = JSON.parse(localStorage.getItem("logineduser")) || [];
+
+                    // let userName = document.getElementById("login");
+                    // userName.innerText = logineduser[0].name;
+    
+                     window.location.href = "../index.html"
+
                 } else {
                     alert('wrong credentials')
                 }
