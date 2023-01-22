@@ -1,11 +1,12 @@
-let carts = JSON.parse(localStorage.getItem('cartitems')) || []
+let carts = JSON.parse(localStorage.getItem('cartitem')) || []
 let tbody = document.querySelector("tbody")
 let chan = document.getElementById('chan')
 let fin = document.getElementById('fin')
 
 createtbody(carts)
 function createtbody(data) {
-    data.forEach(function (ele) {
+    tbody.innerHTML = null
+    data.forEach(function (ele, i) {
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
         td1.innerText = ele.name;
@@ -21,6 +22,13 @@ function createtbody(data) {
         minus.innerText = '-'
         let td4 = document.createElement("td");
         td4.innerText = ele.mrp * ele.quantity
+        let del = document.createElement("button");
+        del.innerText = "X";
+        del.style.padding = '0px 40px'
+        del.style.border = 'none'
+        del.style.color = 'red'
+        del.style.cursor = 'pointer'
+
         let td5 = document.createElement("td");
         td5.innerText = ele.discount;
         minus.style.padding = '0px 10px'
@@ -33,13 +41,18 @@ function createtbody(data) {
         tr.append(td1, td2, td3, td4, td5);
         tbody.append(tr);
         console.log(ele);
+        td5.append(del)
+
 
         plus.addEventListener('click', () => {
             ++(sp.innerText)
-            let sum = +(td4.innerText) + ele.mrp
+            let sum = +(td4.innerText) + Number(ele.mrp)
+            console.log(td4.innerText);
             td4.innerText = sum
-            chan.innerText = Number(chan.innerText) + ele.mrp
-            fin.innerText=chan.innerText
+            chan.innerText = Number(chan.innerText) + Number(ele.mrp)
+            fin.innerText = chan.innerText
+            carts[mrp] = sum
+            localStorage.setItem('cartitem', JSONj.stringify(carts))
 
         })
         minus.addEventListener('click', () => {
@@ -48,7 +61,8 @@ function createtbody(data) {
                 let sum = +(td4.innerText) - ele.mrp
                 td4.innerText = sum
                 chan.innerText = Number(chan.innerText) - ele.mrp
-                fin.innerText=chan.innerText
+                fin.innerText = chan.innerText
+                
             }
         })
         let num = 0
@@ -56,11 +70,40 @@ function createtbody(data) {
             num += ele.mrp * ele.quantity
         })
         chan.innerText = num
-        fin.innerText=chan.innerText
+        fin.innerText = chan.innerText
+        
 
+
+        del.addEventListener("click", () => {
+            let arr = carts.filter((ele, index) => {
+                if (i == index) {
+                    return false
+                } else {
+                    return true
+                }
+            })
+            carts = arr
+            localStorage.setItem('cartitem', JSON.stringify(carts))
+
+            createtbody(carts)
+        })
 
     })
 }
+
+document.querySelector("#butt0").addEventListener("click", function () {
+    localStorage.removeItem("cartitem");
+    window.location.reload();
+});
+document.querySelector("#butt1").addEventListener("click", function () {
+    window.location.replace("Products/Allproduct.html");
+});
+
+document.querySelector("#check").addEventListener("click", function () {
+    localStorage.setItem('totalcost',chan.innerText)
+    window.location.href = "Address.html"
+
+});
 
 
 
