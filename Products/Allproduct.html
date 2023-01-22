@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/footer.css">
+    <script src="https://kit.fontawesome.com/271664d19d.js" crossorigin="anonymous"></script>
+
 
     <style>
         * {
@@ -70,10 +72,9 @@
         }
 
         #fpdiv1 {
-            width: 20%;
+            width: 20rem;
             /* background-color: whitesmoke; */
             color: black;
-            padding-right: 120px;
 
         }
 
@@ -587,7 +588,7 @@
             input.value = 1
             img.addEventListener('click', () => {
                 localStorage.setItem('productdetails', JSON.stringify(ele))
-                window.location.href = "../productdetailpage/productdetail.html"
+                window.location.href = "../routes/productdetail.html"
             })
 
             addbutton.addEventListener('click', () => {
