@@ -16,7 +16,7 @@
         }
 
         .container {
-            margin-top: 20px;
+            margin-top: 30px;
             width: 100%;
             /* position: absolute; */
 
@@ -69,10 +69,8 @@
         }
 
         #fpdiv1 {
-            width: 25%;
-            /* background-color: whitesmoke; */
+            width: 220px;
             color: black;
-            padding-right: 100px;
 
         }
 
@@ -109,6 +107,7 @@
         #fpdiv2 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            width: 900px;
             padding: 2%;
             row-gap: 50px;
             column-gap: 10px;
@@ -591,15 +590,11 @@
                     body: JSON.stringify(obj)
                 })
                 alert("Successfully added to cart")
+                location.reload()
             })
-            select.addEventListener('change', () => {
-                let val = select.value
-                if (val == 20) {
-
-                }
-            })
+            
             //***css***//
-            // maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
+            maindiv.style.height='350px'
             addbutton.style.backgroundColor = "red"
             addbutton.style.color = "white"
             addbutton.style.border = "none"
