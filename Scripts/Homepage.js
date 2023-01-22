@@ -174,6 +174,7 @@ let  products = [{
                     body: JSON.stringify(obj)
                 })
                 alert("Successfully added to cart")
+                location.reload();
             })
             
        
@@ -221,14 +222,31 @@ products2.forEach((ele,index)=>{
 
     
     btn.addEventListener("click",()=>{
-        let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
+        // let cartitem = JSON.parse(localStorage.getItem("cartitem")) || [];
         
-        ele["quantity"] = input.value
-        products2.push(ele)      
-        cartitem.push(products2[index])               
-        localStorage.setItem("cartitem", JSON.stringify(cartitem))
-        alert("Successfully added to cart");
-    })
+        // ele["quantity"] = input.value
+        // products.push(ele)      
+        // cartitem.push(products[index])               
+        // localStorage.setItem("cartitem", JSON.stringify(cartitem))
+        // alert("Successfully added to cart");
+            let loginedusercart = logineduser[0].cart.filter(item => item.name != ele.name)
+            ele.quantity = input.value
+            console.log(logineduser)
+            logineduser[0].cart = loginedusercart
+            logineduser[0].cart.push(ele)
+            localStorage.setItem("logineduser", JSON.stringify(logineduser))
+            let obj = { cart: logineduser[0].cart }
+            // logineduser[0].name = "Mani"
+            fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(obj)
+            })
+            alert("Successfully added to cart")
+            location.reload();
+        })
 
     div.append(image,name,price,text,time,input,btn);
     container2.append(div);
