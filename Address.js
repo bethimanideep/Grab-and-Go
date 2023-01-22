@@ -14,13 +14,6 @@ tr.innerText=total
 br.innerText=total
 
 
-
-
-
-
-
-
-
 document.querySelector("#button4").addEventListener("click", function () {
   let val=`${nam.value},${city.value},${add.value},${pin.value}`
   localStorage.setItem('address',val)

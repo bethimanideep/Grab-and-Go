@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
+    <link rel="stylesheet" href="/style/navbar.css">
+    <script src="https://kit.fontawesome.com/271664d19d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Order.css">
+    <link rel="stylesheet" href="./style/footer.css">
 </head>
-<body>
 
+<body>
+    <div id="nav"></div>
     <div id="orderbottom">
 
         <div id="top">
             <img src="https://media.tenor.com/HBFSE4j6LdcAAAAC/derp.gif" width="150px" alt="">
         </div>
-        
+
         <div id="bottom">
-            <img src="" alt="">
+            <h1 style="margin-left: 17px;">Your order have been successfully placed</h1>
+            <h1 id="bot">Thank you for visiting our website</h1>
+            <!-- <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/31fe3938221437.5968c5a847d93.gif" alt=""> -->
         </div>
-
     </div>
-
-    
-    
+    <div id="footer"></div>
 </body>
-</html>
 
-<script src="./order.js"></script>
+</html>
+<script>
+    document.querySelector("#top").addEventListener("click", function () {
+        window.location.href = "index.html"
+    });
+</script>
+<script type="module">
+    import { navbar } from "../components/navbar.js";
+    let nav_div = document.querySelector("#nav");
+    nav_div.innerHTML = navbar();
+</script>
+<script type="module">
+    import { footer } from "./components/footer.js";
+    let foot_div = document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+</script>

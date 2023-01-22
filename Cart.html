@@ -8,12 +8,13 @@
     <title>Cart Page</title>
     <link rel="stylesheet" href="Cart.css" />
     <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="./style/footer.css">
     <script src="https://kit.fontawesome.com/271664d19d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- -------------Navbar Section---------- -->
-     <div id="nav"></div>
+    <div id="nav"></div>
 
     <!-- ------------Cart Section-------------- -->
     <div id="main">
@@ -86,7 +87,7 @@
             <div id="else1">
                 <button>Best Deals</button>
                 <hr />
-                <button>Top Offers</button>                
+                <button>Top Offers</button>
                 <hr />
                 <button>Quick Bites</button>
                 <hr />
@@ -127,13 +128,20 @@
             </div>
         </div>
     </div>
+    <div id="footer"></div>
 </body>
+
 </html>
 <script type="module">
 
-    import {navbar} from "../components/navbar.js";
-    
-    let nav_div =document.querySelector("#nav");
+    import { navbar } from "../components/navbar.js";
+
+    let nav_div = document.querySelector("#nav");
     nav_div.innerHTML = navbar();
-    </script>
+</script>
 <script src="Cart.js"></script>
+<script type="module">
+    import { footer } from "./components/footer.js";
+    let foot_div = document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+</script>
