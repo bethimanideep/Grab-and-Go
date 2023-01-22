@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* login */
+
+#orderbottom{
+    margin: auto;
+    margin-left: 350px;   
+}
+
+#orderbottom>#top{
+    padding-top: 150px;
+    margin-left: 350px;   
+}
+
+#orderbottom>#bottom{
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+
+
+/* login */
+
+
+#bottommenu>#bottom{
+    display: flex;
+}
+
+#bottom>#social{
+    margin-left: 115px;
+}
+
+#bottom>#app{
+    margin-left: 300px;
+}
+
+#bottom>#app>#store>img{
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+footer{
+    color: white;
+    background-color: #0a244a;
+    width: 100vw;
+    text-align: center;
+}
+
+footer>h6{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    font-size: medium;
+}
+
+footer>#hr{
+    padding-bottom: 10px;
+    border-bottom: 0.2px solid white;
+}
+
+#hr+p{
+    margin-top: 20px;
+}
+
+footer>p{
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 5px;
+}
+
+footer>hr{
+    margin-bottom: 20px;
+}

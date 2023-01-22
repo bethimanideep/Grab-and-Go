@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart Page</title>
     <link rel="stylesheet" href="Cart.css" />
+    <link rel="stylesheet" href="/style/navbar.css">
+    <script src="https://kit.fontawesome.com/271664d19d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- -------------Navbar Section---------- -->
-
+     <div id="nav"></div>
 
     <!-- ------------Cart Section-------------- -->
     <div id="main">
@@ -127,4 +129,11 @@
     </div>
 </body>
 </html>
+<script type="module">
+
+    import {navbar} from "../components/navbar.js";
+    
+    let nav_div =document.querySelector("#nav");
+    nav_div.innerHTML = navbar();
+    </script>
 <script src="Cart.js"></script>
