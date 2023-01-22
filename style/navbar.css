@@ -160,7 +160,8 @@ cursor: pointer;
     background-color: hsl(0, 16%, 96%);
     width:20%;
     box-shadow:0 0 5px rgba(#000, .15);
-   
+    
+
   }
 
 .dropdown ul {

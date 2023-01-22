@@ -1,4 +1,4 @@
-var dashboardData = JSON.parse(window.localStorage.getItem("myRegisterData")) || [];
+// var dashboardData = JSON.parse(window.localStorage.getItem("myRegisterData")) || [];
 // console.log("dashboardData:", dashboardData);
 
 const otpform = document.querySelector(".otpform");
@@ -7,17 +7,32 @@ const digit = document.getElementById("digit-1");
 const container = document.querySelector("tbody");
 const sort = document.getElementById("sort")
 
+let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
 
-
-let login = {
-  Unique_id: 123,
-  Name: "Anurag",
-  email: "a@gmail.com",
-  pass: 123,
+function fetchusers() {
+  fetch(`${baseURL}/users`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then((res) => res.json())
+    .then(data => {
+      console.log(data)
+      display(data);
+    })
 }
 
 
-display(dashboardData);
+// let login = {
+//   // Unique_id: 123,
+//   Name: "Anurag",
+//   email: "a@gmail.com",
+//   pass: 123,
+// }
+fetchusers()
+
+
 
 function display(ele) {
 
@@ -26,17 +41,17 @@ function display(ele) {
 
     let table = document.createElement("tr");
 
-    let unique = document.createElement("td");
-    unique.innerHTML = e.Unique_id;
+    // let unique = document.createElement("td");
+    // unique.innerHTML = e.Unique_id;
 
     let name = document.createElement("td");
-    name.innerHTML = e.Name;
+    name.innerHTML = e.name;
 
     let email = document.createElement("td");
     email.innerHTML = e.email;
 
     let pass = document.createElement("td");
-    pass.innerHTML = e.pass;
+    pass.innerHTML = e.password;
 
     // let age = document.createElement("td");
     // age.innerHTML = e.Age;
@@ -65,24 +80,33 @@ function display(ele) {
     cartitems.appendChild(cartitembtn)
 
     deletebtn.addEventListener("click", () => {
-      // console.log(e.otp)
-      let dashboard = JSON.parse(window.localStorage.getItem("myRegisterData")) || []
+      // console.log(e.target)
+      // let dashboard = JSON.parse(window.localStorage.getItem("myRegisterData")) || []
 
-      let newdata = dashboard.filter(elem => elem.Unique_id != e.Unique_id)
-      console.log(newdata)
-      localStorage.setItem("myRegisterData", JSON.stringify(newdata));
+      // let newdata = dashboard.filter(elem => elem.email != e.email)
+      // console.log(newdata)
+      // localStorage.setItem("myRegisterData", JSON.stringify(newdata));
+      // container.innerHTML = null
+
+      fetch(`${baseURL}/users/${e.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
       container.innerHTML = null
-      display(newdata)
-
+      fetchusers()
     })
 
     cartitembtn.addEventListener("click", () => {
-      let torender = JSON.parse(window.localStorage.getItem(`${e.Unique_id}`)) || []
-      localStorage.setItem("torender", JSON.stringify(torender))
+
+      console.log(e)
+      // let torender = JSON.parse(window.localStorage.getItem(`${e.email}`)) || []
+      localStorage.setItem("torender", JSON.stringify(e.cart))
       window.location.href = "./cart.html"
     })
 
-    table.append(unique, name, email, pass, cartitems, deletetd);
+    table.append(name, email, pass, cartitems, deletetd);
     container.append(table);
   });
 }
