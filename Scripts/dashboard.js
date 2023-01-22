@@ -115,7 +115,7 @@ function display(ele) {
 // function register(e) {
 //   console.log(otpform)
 //   otpform.style.opacity = 1
-
+ 
 //   form.addEventListener("submit", (ex) => {
 //     ex.preventDefault()
 
