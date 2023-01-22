@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ProdectDetail</title>
     <link rel="stylesheet" href="../style/productdetail.css">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/footer.css">
@@ -29,14 +29,14 @@
                 <div class="categ">
                     <p>Category</p>
                     <div>
-                        <a href="Allproduct.html">All products</a>
+                        <a href="../Products/Allproduct.html">All products</a>
                         <div>
-                            <a href="fruits.html">Fruits and Vegetables</a>
-                            <a href="bevarages.html">Bevarages</a>
-                            <a href="cleaninghousehold.html">Cleaning Household</a>
-                            <a href="foodgrains&oils&masala.html">Grains, Oils & Masala</a>
-                            <a href="SnacksFood.html">Snacks Food</a>
-                            <a href="bakery.html">Bekary</a>
+                            <a href="../Products/fruits.html">Fruits and Vegetables</a>
+                            <a href="../Products/bevarages.html">Bevarages</a>
+                            <a href="../Products/cleaninghousehold.html">Cleaning Household</a>
+                            <a href="../Products/foodgrains&oils&masala.html">Grains, Oils & Masala</a>
+                            <a href="../Products/SnacksFood.html">Snacks Food</a>
+                            <a href="../Products/bakery.html">Bekary</a>
                         </div>
                     </div>
                 </div>
@@ -296,11 +296,12 @@
 
 
     <script src="../Scripts/productdetail.js"></script>
+    <script src="https://kit.fontawesome.com/271664d19d.js" crossorigin="anonymous"></script>
 </body>
 
 <script type="module">
 
-    import navbar from "../components/navbar.js"
+    import { navbar } from "../components/navbar.js"
     let nav_div = document.querySelector("#nav")
     nav_div.innerHTML = navbar()
 
