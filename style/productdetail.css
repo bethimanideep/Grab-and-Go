@@ -52,7 +52,9 @@ li,
 
 /****************** prod_cont ******************/
 
-
+.productdetail {
+    margin-top: 2.5rem;
+}
 
 .prod_cont {
     display: flex;

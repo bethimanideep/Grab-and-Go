@@ -1,5 +1,7 @@
+let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
 let product = JSON.parse(localStorage.getItem("productdetails")) || []
-
+let logineduser = JSON.parse(localStorage.getItem("logineduser")) || []
+// console.log(logineduser[0].name)
 if (product.length == 0) {
     product = {
         "brand": "freesho",
@@ -14,12 +16,12 @@ if (product.length == 0) {
     }
 }
 
-let logineduser = {
-    Unique_id: 123,
-    Name: "Anu",
-    email: "bittu.anurag@gmail.com",
-    pass: 123,
-}
+// let logineduser = {
+//     Unique_id: 12345,
+//     Name: "Anu",
+//     email: "bittu.anurag123@gmail.com",
+//     pass: 123,
+// }
 
 
 
@@ -193,19 +195,39 @@ inc.addEventListener("click", () => {
 
 
 saveit.addEventListener("click", () => {
-    let cartitem = JSON.parse(localStorage.getItem("cartitem")) || []
-    product.quan = +quant.innerHTML
-    cartitem = cartitem.filter(item => item.name != product.name)        //update obj with original obj and id
-    cartitem.push(product)                //update obj with original obj
-    localStorage.setItem("cartitem", JSON.stringify(cartitem))
+    // let cartitem = JSON.parse(localStorage.getItem("cartitem")) || []
+    // product.quantity = +quant.innerHTML
+    // cartitem = cartitem.filter(item => item.name != product.name)        //update obj with original obj and id
+    // cartitem.push(product)                //update obj with original obj
+    // localStorage.setItem("cartitem", JSON.stringify(cartitem))
 
-    let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.email}`)) || []  /////////////////////////////////
-    // product.quan = +quant.innerHTML
-    loggeduser = loggeduser.filter(item => item.name != product.name)        //update obj with original obj and id
-    loggeduser.push(product)                //update obj with original obj
-    localStorage.setItem(`${logineduser.email}`, JSON.stringify(loggeduser))////////////////////////
-    alert("Successfully added to cart")
+    // let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.email}`)) || []  /////////////////////////////////
+    // // product.quantity = +quant.innerHTML
+    // loggeduser = loggeduser.filter(item => item.name != product.name)        //update obj with original obj and id
+    // loggeduser.push(product)                //update obj with original obj
+    // localStorage.setItem(`${logineduser.email}`, JSON.stringify(loggeduser))////////////////////////
+    // alert("Successfully added to cart")
+    // quant.innerHTML = 1
+    let loginedusercart = logineduser[0].cart.filter(item => item.name != product.name)
+    product.quantity = +quant.innerHTML
+    console.log(logineduser)
+    logineduser[0].cart = loginedusercart
+    logineduser[0].cart.push(product)
+    localStorage.setItem("logineduser", JSON.stringify(logineduser))
+    let obj = { cart: logineduser[0].cart }
+    // logineduser[0].name = "Mani"
+    fetch(`${baseURL}/users/${logineduser[0].id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(obj)
+    })
+    alert("Successfully added to cart");
     quant.innerHTML = 1
+
+
+
 })
 
 
@@ -275,19 +297,21 @@ function rendercard(data) {
         add.innerHTML = "ADD"
 
         add.addEventListener("click", () => {
-            let cartitem = JSON.parse(localStorage.getItem("cartitem")) || []
-            element.quan = 1
-            cartitem = cartitem.filter(item => item.name != element.name)        //update obj with original obj and id
-            cartitem.push(element)                //update obj with original obj
-            localStorage.setItem("cartitem", JSON.stringify(cartitem))
-
-            let loggeduser = JSON.parse(localStorage.getItem(`${logineduser.email}`)) || []  /////////////////////////////////
-            // product.quan = +quant.innerHTML
-            element.quan = 1
-            loggeduser = loggeduser.filter(item => item.name != element.name)        //update obj with original obj and id
-            loggeduser.push(element)                //update obj with original obj
-            localStorage.setItem(`${logineduser.email}`, JSON.stringify(loggeduser))////////////////////////
-            alert("Successfully added to cart")
+            let loginedusercart = logineduser[0].cart.filter(item => item.name != element.name)
+            element.quantity = 1
+            console.log(logineduser)
+            logineduser[0].cart = loginedusercart
+            logineduser[0].cart.push(element)
+            localStorage.setItem("logineduser", JSON.stringify(logineduser))
+            let obj = { cart: logineduser[0].cart }
+            fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(obj)
+            })
+            alert("Successfully added to cart");
 
         })
 
@@ -298,7 +322,7 @@ function rendercard(data) {
             if (e.target.getAttribute("class") != "addbtn") {
                 localStorage.setItem("productdetails", JSON.stringify(element))
                 setTimeout(() => {
-                    window.location.href = "./productdetail.html"
+                    window.location.href = "../routes/productdetail.html"
                 }, 500)
 
             }

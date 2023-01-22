@@ -6,21 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./productdetail.css">
+    <link rel="stylesheet" href="../style/productdetail.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
 </head>
 
 <body>
 
-
+    <div id="nav"></div>
 
     <section class="productdetail">
         <div class="none imgzoom">
             <img src="" alt="">
+            <button class="cross"><img
+                    src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%234A4A4A' fill-rule='evenodd' d='M8.645 7.904l6.274-6.273a.277.277 0 000-.393l-.157-.157a.277.277 0 00-.393 0L8.096 7.355a.135.135 0 01-.192 0L1.63 1.081a.277.277 0 00-.392 0l-.157.157a.277.277 0 000 .393l6.274 6.273a.135.135 0 010 .192L1.081 14.37a.277.277 0 000 .392l.157.157a.277.277 0 00.392 0l6.274-6.274a.135.135 0 01.192 0l6.273 6.274a.277.277 0 00.393 0l.157-.157a.277.277 0 000-.392L8.645 8.096a.135.135 0 010-.192'/%3E%3C/svg%3E"
+                    alt=""></button>
+
         </div>
+
         <div class="prod_cont">
+            <div class="category">
+                <div class="categ">
+                    <p>Category</p>
+                    <div>
+                        <a href="Allproduct.html">All products</a>
+                        <div>
+                            <a href="fruits.html">Fruits and Vegetables</a>
+                            <a href="bevarages.html">Bevarages</a>
+                            <a href="cleaninghousehold.html">Cleaning Household</a>
+                            <a href="foodgrains&oils&masala.html">Grains, Oils & Masala</a>
+                            <a href="SnacksFood.html">Snacks Food</a>
+                            <a href="bakery.html">Bekary</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="prodimg">
-                <img src="https://www.bigbasket.com/media/uploads/p/l/10000150_19-fresho-onion.jpg" alt=""
-                    class="image_big">
+                <div class="bigimgcont">
+                    <img src="https://www.bigbasket.com/media/uploads/p/l/10000150_19-fresho-onion.jpg" alt=""
+                        class="image_big">
+                </div>
 
                 <div class="images">
                     <div class="simg img1">
@@ -37,11 +62,6 @@
             <div class="prod_det">
                 <a class="brand" context="brandlabel" href="/pb/fresho/" params="">Brand</a>
                 <h1 class="name" style="-webkit-line-clamp: initial;">ProdectName</h1>
-
-                <!-- <p class="mrp">MRP:Rs.200</p>
-                <p class="price">Price:Rs 150</p>
-                <p class="red">You save X%</p>
-                <p class="tax">Inclusive of all tax</p> -->
 
                 <div id="price">
                     <table>
@@ -69,25 +89,26 @@
 
 
 
-                <button class="dec none"><img
+                <button class="dec none cursor"><img
                         src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Cpath fill='%239CC63D' fill-rule='evenodd' stroke='%239CC63D' stroke-width='.4' d='M1 1.37h16V.63H1z'/%3E%3C/svg%3E"
                         alt=""></button>
                 <span class="quant">1</span>
-                <button class="inc none"><img
+                <button class="inc none cursor"><img
                         src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Cpath fill='%239CC63D' fill-rule='evenodd' stroke='%239CC63D' stroke-width='.4' d='M16.692 8.57H9.585a.154.154 0 01-.154-.155V1.308A.308.308 0 009.123 1h-.246a.308.308 0 00-.308.308v7.107a.154.154 0 01-.154.154H1.308A.308.308 0 001 8.877v.246c0 .17.138.308.308.308h7.107c.085 0 .154.069.154.154v7.107c0 .17.138.308.308.308h.246c.17 0 .308-.138.308-.308V9.585c0-.085.069-.154.154-.154h7.107c.17 0 .308-.138.308-.308v-.246a.308.308 0 00-.308-.308'/%3E%3C/svg%3E"
                         alt=""></button>
-                <button class="basket">Add to basket</button>
-                <button class="saveit none">Save</button>
+                <button class="basket cursor">Add to basket</button>
+                <button class="saveit none cursor">Save</button>
                 <p class="delievery">Delievery:tommorrow 9:00AM</p>
                 <p class="pack">Pack sizes</p>
                 <div class="pack_size">
-                    <div class="pack1">
-                        <div class="pack1size">5 kg</div>
-                        <div class="pack1price">Rs 5x (Save 32%)</div>
-                        <div><img
+                    <div class="pack3 lightgreen">
+                        <div class="pack3size">1 kg</div>
+                        <div class="pack3price">Rs 1x (Save 20%)</div>
+                        <div class="darkgreen"><img
                                 src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath fill='%238F8F8F' fill-rule='evenodd' d='M15.904.185l-.092-.091a.322.322 0 00-.457.002L4.647 10.893a.162.162 0 01-.232-.003L.653 6.893a.323.323 0 00-.457-.014l-.095.089a.325.325 0 00-.014.457L4.27 11.87a.323.323 0 00.465.006L15.906.643a.325.325 0 00-.002-.458'/%3E%3C/svg%3E"
                                 alt=""></div>
                     </div>
+
                     <div class="pack2">
                         <div class="pack2size">2 kg</div>
                         <div class="pack2price">Rs 2x (Save 25%)</div>
@@ -95,13 +116,14 @@
                                 src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath fill='%238F8F8F' fill-rule='evenodd' d='M15.904.185l-.092-.091a.322.322 0 00-.457.002L4.647 10.893a.162.162 0 01-.232-.003L.653 6.893a.323.323 0 00-.457-.014l-.095.089a.325.325 0 00-.014.457L4.27 11.87a.323.323 0 00.465.006L15.906.643a.325.325 0 00-.002-.458'/%3E%3C/svg%3E"
                                 alt=""></div>
                     </div>
-                    <div class="pack3">
-                        <div class="pack3size">1 kg</div>
-                        <div class="pack3price">Rs 1x (Save 20%)</div>
+                    <div class="pack1">
+                        <div class="pack1size">5 kg</div>
+                        <div class="pack1price">Rs 5x (Save 32%)</div>
                         <div><img
                                 src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath fill='%238F8F8F' fill-rule='evenodd' d='M15.904.185l-.092-.091a.322.322 0 00-.457.002L4.647 10.893a.162.162 0 01-.232-.003L.653 6.893a.323.323 0 00-.457-.014l-.095.089a.325.325 0 00-.014.457L4.27 11.87a.323.323 0 00.465.006L15.906.643a.325.325 0 00-.002-.458'/%3E%3C/svg%3E"
                                 alt=""></div>
                     </div>
+
                 </div>
 
             </div>
@@ -147,8 +169,8 @@
                     <div class="instdetail">
                         <div style="font-family: 'ProximaNova-Regular';font-size:13px;line-height: 18px;color:8f8f8f;">
                             <ul>
-                                <li>Gently wash the rice with drinking water.</li>
-                                <li>For better cooking result soak 30 minutes prior to cooking.</li>
+                                <li>Gently wash with drinking water.</li>
+                                <li>For bette result soak 30 minutes prior to cooking.</li>
                                 <div class="none none2" data-id="2">
                                     <li>Electric Cooker: Add 1 cup of rice to 2.0 cups of water and place it in an
                                         electric
@@ -241,8 +263,51 @@
         </div>
     </section>
 
+    <section class="ratingandreview">
+        <div class="rate"><span class="randr">Rating and Reviews</span>
+            <div class="write">
 
-    <script src="./productdetail.js"></script>
+                <div class="content">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1381/1381552.png" alt="">
+                    <textarea rows="2" cols="30" placeholder="write your comments here..."></textarea>
+                    <h4 style="color:#8F8F8F;margin-bottom:6px;margin-top:9px;">Want to rate this product?
+                    </h4>
+                    You can rate and review this product <br>only after purchasing from bigbasket
+                </div><br>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="similarproduct">
+
+        <p class="similar">Similar Product</p>
+        <div class="products">
+
+        </div>
+
+    </section>
+
+    <div id="footer">
+
+    </div>
+
+
+    <script src="../Scripts/productdetail.js"></script>
 </body>
+
+<script type="module">
+
+    import navbar from "../components/navbar.js"
+    let nav_div = document.querySelector("#nav")
+    nav_div.innerHTML = navbar()
+
+    import { footer } from "../components/footer.js";
+    let foot_div = document.querySelector("#footer");
+    foot_div.innerHTML = footer();
+
+</script>
 
 </html>
