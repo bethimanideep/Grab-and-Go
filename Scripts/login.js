@@ -72,3 +72,11 @@ async function signin(obj) {
             
     }
 }
+
+const logout = document.querySelector(".logout")
+logout.addEventListener("click", () => {
+    alert("Logged out successfully")
+    localStorage.clear()
+    window.location.href = "../index.html"
+
+})

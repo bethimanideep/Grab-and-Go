@@ -2,7 +2,7 @@ let navbar = () => {
     const username = JSON.parse(localStorage.getItem("logineduser")) || []
     // alert(username[0].name)
     console.log(username)
-    let name = "Guest"
+    let name = "Login/signup"
     let item = 0
     if (username.length != 0) {
         name = username[0].name
@@ -41,6 +41,7 @@ let navbar = () => {
     </div>
     <div class="third-box">
         <div class="bangalore"><i class="fas fa-map-marker-alt"></i> <span>560004, Bangalore <i class="fas fa-angle-down"></i></span> <i class="far fa-user"></i><a href="/routes/login.html" id ="login">${name}</a></div>
+
         <button class="cart-btn"><a href="cart.html"><i class="fas fa-shopping-basket fa-3x"></i> <span><sup>My Basket</sup></span><p id="cartCount">${item} items</p></a></button>
     </div>
 </div>

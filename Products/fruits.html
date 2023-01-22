@@ -17,7 +17,7 @@
         }
 
         .container {
-            margin-top: 20px;
+            margin-top: 30px;
             width: 100%;
             /* position: absolute; */
 
@@ -571,7 +571,7 @@
             input.value = 1
             img.addEventListener('click', () => {
                 localStorage.setItem('productdetails', JSON.stringify(ele))
-                window.location.href = "../productdetailpage/productdetail.html"
+                window.location.href = "../routes/productdetail.html"
             })
 
             addbutton.addEventListener('click', () => {
@@ -591,13 +591,9 @@
                     body: JSON.stringify(obj)
                 })
                 alert("Successfully added to cart")
+                location.reload()
             })
-            select.addEventListener('change', () => {
-                let val = select.value
-                if (val == 20) {
-
-                }
-            })
+            
             //***css***//
             maindiv.style.height='350px'
             addbutton.style.backgroundColor = "red"

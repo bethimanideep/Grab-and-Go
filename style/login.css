@@ -19,7 +19,7 @@
 .container1{
 
     width:400px;
-    height:430px;
+    height:450px;
    text-align: center;
     margin: 1rem;
     padding: 2rem;
@@ -103,4 +103,20 @@ button:hover{
 
 h2{
     color: rgb(189, 231, 125);
+}
+
+.logout {
+    display: block;
+    text-decoration: none;
+    color: red;
+    margin: 20px;
+}
+.logout:hover{
+    display: block;
+    text-decoration: none;
+    color: red;
+    margin: 20px;
+    font-size: 18px;
+    padding:5px;
+
 }
