@@ -56,12 +56,12 @@ let footer = () => {
                <p id="pay-options">
                 <span> <span id="COD"><sup>CASH ON DELIVERY</sup></span></span>
 
-                <span><img src="../Visa.png" alt="visa_logo" id="paymentImg"></span>
-                <span><img src="../MasterCard.png" alt="MasterCard_logo" id="paymentImg"></span>
-                <span><img src="../Paytm.png" alt="paytm_logo" id="paymentImg"></span>
-                <span><img src="../mobikwik.png" alt="mobiwik_logo" id="paymentImg"></span>
-                <span><img src="../RuPay.png" alt="Rupay_logo" id="paymentImg1"></span>
-                <span><img src="../americanExpress.png" alt="americanExpress_logo" id="paymentImg2"></span>
+                <span><img src="Visa.png" alt="visa_logo" id="paymentImg"></span>
+                <span><img src="MasterCard.png" alt="MasterCard_logo" id="paymentImg"></span>
+                <span><img src="Paytm.png" alt="paytm_logo" id="paymentImg"></span>
+                <span><img src="mobikwik.png" alt="mobiwik_logo" id="paymentImg"></span>
+                <span><img src="RuPay.png" alt="Rupay_logo" id="paymentImg1"></span>
+                <span><img src="americanExpress.png" alt="americanExpress_logo" id="paymentImg2"></span>
                 
                </p>
             </div>
