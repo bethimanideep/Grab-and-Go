@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./productdetail.css">
+    <link rel="stylesheet" href="../style/productdetail.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
 </head>
 
 <body>
@@ -288,22 +290,24 @@
 
     </section>
 
-    <div id="footer"></div>
+    <div id="footer">
+
+    </div>
 
 
-    <script src="./productdetail.js"></script>
+    <script src="../Scripts/productdetail.js"></script>
 </body>
 
-<!-- <script type="module">
+<script type="module">
 
-    import { navbar } from ""
+    import navbar from "../components/navbar.js"
     let nav_div = document.querySelector("#nav")
     nav_div.innerHTML = navbar()
 
-    import { navbar } from ""
-    let footer_div = document.querySelector("#footer")
-    footer_div.innerHTML = footerbar()
+    import { footer } from "../components/footer.js";
+    let foot_div = document.querySelector("#footer");
+    foot_div.innerHTML = footer();
 
-</script> -->
+</script>
 
 </html>

@@ -1,4 +1,5 @@
-var torender = JSON.parse(window.localStorage.getItem("torender"));
+var torender = JSON.parse(window.localStorage.getItem("torender")) || [];
+// let torender = JSON.parse(localStorage.getItem("logineduser")) || []
 // console.log("VaccinatedData:", VaccinatedData);
 const prod = document.querySelector(".products");
 const similar = document.querySelector(".similar");
@@ -46,7 +47,7 @@ function rendercard(data) {
 
     const quant = document.createElement("p")
     quant.className = "quant"
-    quant.innerHTML = "Quantity: " + element.quan
+    quant.innerHTML = "Quantity: " + element.quantity
 
 
 
