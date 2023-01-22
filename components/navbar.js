@@ -2,7 +2,7 @@ let navbar = () => {
     const username = JSON.parse(localStorage.getItem("logineduser")) || []
     // alert(username[0].name)
     console.log(username)
-    let name = "Guest"
+    let name = "Login/signup"
     let item = 0
     if (username.length != 0) {
         name = username[0].name
@@ -13,7 +13,7 @@ let navbar = () => {
     return ` <div id="nav">
     <div class="first-box">
 
-        <div class="logo"><a href="/index.html"><img src="logo.png" alt=""></a></div>
+        <div class="logo"><a href="/index.html"><img src="../logo.png" alt=""></a></div>
 
         <div class="category-drop"><p>SHOP BY CATAGORY<i class="fas fa-angle-down"></i></p>
         <div class="dropdown">
