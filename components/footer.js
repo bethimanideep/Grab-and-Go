@@ -55,12 +55,14 @@ let footer = () => {
                 <p id="value-description">Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Mysore, Madurai, Coimbatore, Vijayawada-Guntur, Kolkata, Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur, Patna, Indore, Chandigarh Tricity, Jaipur, Bhopal, Noida-Ghaziabad, Kochi, Krishna District, Bhubaneshwar-Cuttack, Guwahati, Renigunta, Hubli, Davanagere, Trichy, Amravati, Raipur, Rajkot, Gwalior, Bareilly, Allahabad, Hyderabad Rural, Bangalore Rural, Chennai Rural, Vizag Rural, Lucknow Rural, Noida Rural, Ahmedabad Rural, Bhopal Rural, Bhubaneswar Rural, Coimbatore Rural, Chandigarh Rural, Gurugram Rural, Guwahati Rural, Indore Rural, Kochi Rural, Kolkata Rural, Mumbai Rural, Mysore Rural, Nagpur Rural, Patna Rural, Pune Rural, Surat Rural, Vadodara Rural, Jaipur Rural, Ranchi, Nashik, Agra, Kozhikode </p>
                <p id="pay-options">
                 <span> <span id="COD"><sup>CASH ON DELIVERY</sup></span></span>
-                <span><img src="/Visa.png" alt="visa_logo" id="paymentImg"></span>
-                <span><img src="/MasterCard.png" alt="MasterCard_logo" id="paymentImg"></span>
-                <span><img src="/Paytm.png" alt="paytm_logo" id="paymentImg"></span>
-                <span><img src="/mobikwik.png" alt="mobiwik_logo" id="paymentImg"></span>
-                <span><img src="/RuPay.png" alt="Rupay_logo" id="paymentImg1"></span>
-                <span><img src="/americanExpress.png" alt="americanExpress_logo" id="paymentImg2"></span>
+
+                <span><img src="Visa.png" alt="visa_logo" id="paymentImg"></span>
+                <span><img src="MasterCard.png" alt="MasterCard_logo" id="paymentImg"></span>
+                <span><img src="Paytm.png" alt="paytm_logo" id="paymentImg"></span>
+                <span><img src="mobikwik.png" alt="mobiwik_logo" id="paymentImg"></span>
+                <span><img src="RuPay.png" alt="Rupay_logo" id="paymentImg1"></span>
+                <span><img src="americanExpress.png" alt="americanExpress_logo" id="paymentImg2"></span>
+                
                </p>
             </div>
         </div>
