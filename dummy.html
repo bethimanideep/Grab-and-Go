@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.flt-left{
+  float: left;
+  /* top: 0%; */
+}
+.carousel{
+  width:100%;
+  /* margin:auto; */
+  margin-left: 120px;
+}
+.row{
+  width:80%;
+  padding:0;
+  overflow:hidden;
+  margin:auto;
+}
+.row-container{
+  width:2860px;
+  /* height: 10px; */
+  transition:0.5s;
+  margin: auto;
+}
+.container2{
+  width:250px; 
+  float:left;
+  display:inline;
+  justify-content: center;
+  margin: auto;
+}
+.clear{
+  clear:both;
+}
+/* .controls{
+  width:10%;
+  margin:auto;
+} */
+.carousel button{
+  color:white;
+  background:#040d1a;
+  position: absolute;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+  margin: auto;
+  margin-top: 80px ;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container2 img{
+  width: 100%;
+}
+.container2 h6{
+  text-align: center;
+  font-size: small;
+}
+.slidep{
+  margin-bottom: -30px;
+  font-size: 20px;
+  color: rgb(90, 86, 81);
+}
+ </style>
+</head>
+<body>
+    <div class="carousel">
+        <button id="btn1" class='flt-left' onclick="slideRight()";><</button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+         <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/532019_260_ss_01.jpg?impolicy=qlt-medium&imwidth=100&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Fashion Sneakers</h6>
+        </div>
+        <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/475467_221_ss_01.jpg?impolicy=qlt-medium&imwidth=300&imdensity=1" alt="">
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Clearance</h6>
+      </div>
+        <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/509700_224_ss_01.jpg?impolicy=qlt-medium&imwidth=300&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+        <h6 class="slidep2">Casual Boots & Booties</h6>
+        </div>
+        <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/500167_042_ss_01.jpg?impolicy=qlt-medium&imwidth=100&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Snow & Winter Boots</h6>
+        </div>
+        <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_clearance?impolicy=qlt-medium&imwidth=100&imdensity=1" alt="">
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Clearance</h6>
+      </div>
+            <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/515687_022_ss_01.jpg?impolicy=qlt-medium&imwidth=100&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Snow & Winter Boots</h6>
+        </div>
+           <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/465047_001_ss_01.jpg?impolicy=qlt-medium&imwidth=100&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Dress Sandels</h6>
+        </div>
+        <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_clearance?impolicy=qlt-medium&imwidth=100&imdensity=1" alt="">
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Clearance</h6>
+      </div>
+           <div class="container2">
+          <img src="https://images.dsw.com/is/image/DSWShoes/512439_319_ss_01?impolicy=qlt-medium&imwidth=100&imdensity=1" />
+          <h6 class="slidep">Women's</h6>
+          <h6 class="slidep2">Athletic & Running</h6>
+        </div>
+        <div class="container2">
+            <img src="https://images.dsw.com/is/image/DSWShoes/515687_022_ss_01.jpg?impolicy=qlt-medium&imwidth=100&imdensity=1" alt="">
+            <h6 class="slidep">Women's</h6>
+            <h6 class="slidep2">Loafers</h6>
+        </div>
+        <!-- <div class="container1">
+            <img src="https://images.dsw.com/is/image/DSWShoes/512439_319_ss_01?impolicy=qlt-medium&imwidth=100&imdensity=1" alt="">
+            <h6 class="slidep">Women's</h6>
+            <h6 class="slidep2">Flats</h6>
+        </div> -->
+       
+          <div class="clear"></div>
+          </div>
+         
+          </div>
+         <button style="height: 30px;" class='flt-left'  onclick="slideLeft(this)";>></i></button>
+          <div class="clear"></div>
+      </div>
+      <script>
+        
+var right = 0;
+var maxMargin;
+var jumpMargin = 200;
+
+function setWidth(){
+  var boxwidth = document.querySelector(".container2").offsetWidth;
+  var displaywidth = document.querySelector(".row").offsetWidth;
+  // var displayheight = document.querySelector(".row").offsetHeight;
+  var children = document.querySelectorAll(".row-container > .container2").length;
+  var outerboxwidth = children * boxwidth + (children*10);
+  document.querySelector(".row-container").style.width = outerboxwidth+"px";
+  document.querySelectorAll("button")[0].style.height = displayheight+"px";
+  document.querySelectorAll("button")[1].style.height = displayheight+"px";
+  maxMargin = outerboxwidth - displaywidth;
+}
+
+function slideLeft(event){
+  var rowcont = document.querySelector(".row-container");
+  if(right <= -maxMargin){
+    event.preventDefault();
+  }
+  else{
+    right -= jumpMargin;
+  }
+   rowcont.style.marginLeft = right+"px";
+}
+
+function slideRight(event){
+  var rowcont = document.querySelector(".row-container");
+  if(right==0){
+    event.preventDefault();
+  }
+  else if(right >= maxMargin){
+    event.preventDefault();
+  }
+  else{
+     right += jumpMargin;
+  }
+  rowcont.style.marginLeft = right+"px";
+}
+
+window.onload=setWidth;
+</script>
+</body>
+</html>

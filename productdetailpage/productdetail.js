@@ -253,7 +253,7 @@ function rendercard(data) {
 
         const td2 = document.createElement("td")
         td2.className = "price"
-        actprc = element.mrp * (100 - element.discount) / 100
+        actprc = +element.mrp * (100 - element.discount) / 100
         td2.innerHTML = "Rs " + actprc
 
         const tr2 = document.createElement("tr")
