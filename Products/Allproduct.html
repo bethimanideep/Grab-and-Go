@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
+
     <style>
         * {
             margin: 0;
@@ -13,13 +16,64 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        .container {
+            margin-top: 20px;
+            width: 100%;
+            /* position: absolute; */
+
+
+            overflow: hidden;
+        }
+
+        .wrapper {
+            width: 100%;
+            display: flex;
+            animation: slide 10s infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(0);
+            }
+
+            30% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-100%);
+            }
+
+            55% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-200%);
+            }
+
+            80% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(-300%);
+            }
+        }
+
+        .wrapper>img {
+            width: 100%;
+        }
+
         #fpdiv1 {
-            margin: 5% 0%;
-            width: 25%;
-            background-color: whitesmoke;
+            width: 20%;
+            /* background-color: whitesmoke; */
             color: black;
-            padding: 3%;
-            border-radius: 10px;
+            padding-right: 120px;
 
         }
 
@@ -29,6 +83,8 @@
 
         #fruitproducts {
             display: flex;
+            margin: 5% 0%;
+
         }
 
 
@@ -56,17 +112,79 @@
             grid-template-columns: repeat(4, 1fr);
             padding: 2%;
             row-gap: 50px;
+            column-gap: 10px;
+            height: 1000px;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
+
+        /* #fpdiv2 >div{
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        } */
 
         #countandsort {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+        }
+
+        #fpdiv2>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        #fpdiv2>div {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+
+        #fpdiv1 h3 {
+            color: rgba(0, 0, 255, 0.474);
+        }
+
+        #fpdiv1 {
+            border-right: 1px solid rgba(0, 0, 0, 0.434);
+        }
+
+        #fpdiv2::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        #fpdiv2::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        #fpdiv2::-webkit-scrollbar-thumb {
+            background: rgba(255, 0, 0, 0.409);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        #fpdiv2::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 255, 0.474);
         }
     </style>
 </head>
 
 <body>
+    <div id="nav">
+
+    </div>
     <div id="container">
+        <div class="container">
+            <div class="wrapper">
+                <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_cmc_breakfast_460px-020122.jpg"
+                    alt="">
+                <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_wedding-brida_EP_1600x460px-020122.jpg"
+                    alt="">
+                <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_bcd_paneer_460px-020122.jpg"
+                    alt="">
+                <img src="https://www.bigbasket.com/media/uploads/banner_images/YXHP144_hp_fom_m_bbpl-staples_460_160123_Bangalore.jpg"
+                    alt="">
+                <img src="https://www.bigbasket.com/media/uploads/banner_images/HP_EMF_M_WeekdayBangalore-1600x460-160123.jpeg"
+                    alt="">
+            </div>
+        </div>
         <div>
             <img id="fruitsimg"
                 src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg"
@@ -75,7 +193,7 @@
         <div id="fruitproducts">
             <div id="fpdiv1">
                 <div>
-                    <h4>Category</h4>
+                    <h3>Category</h3>
                     <a href="Allproduct.html">All products</a>
                     <a href="fruits.html">Fruits and Vegetables</a>
                     <a href="bevarages.html">Bevarages</a>
@@ -85,74 +203,79 @@
                     <a href="bakery.html">Bekary</a>
                 </div>
                 <div>
-                    <h4>Brand</h4>
+                    <h3>Brand</h3>
                     <div>
-                        <input type="text" placeholder="Search by Brand">
-                        <button>Search</button>
-                        <div><input type="checkbox"> Fresho</div>
-                        <div><input type="checkbox"> BB Combo</div>
-                        <div><input type="checkbox"> Organic</div>
-                        <div><input type="checkbox"> USA</div>
-                        <div><input type="checkbox"> Gopalan Organic</div>
-                        <div><input type="checkbox"> Hoovu Fresh</div>
+                        <div><input name="box" type="checkbox" value="fresho"> Fresho</div>
+                        <div><input name="box" type="checkbox" value="bb Combo"> BB Combo</div>
+                        <div><input name="box" type="checkbox" value="organic"> Organic</div>
+                        <div><input name="box" type="checkbox" value="usa"> USA</div>
+                        <div><input name="box" type="checkbox" value="Nestle"> Nestle</div>
+                        <div><input name="box" type="checkbox" value="Amul"> Amul</div>
+                        <div><input name="box" type="checkbox" value="Bisleri"> Bisleri</div>
+                        <div><input name="box" type="checkbox" value="Boost"> Boost</div>
+                        <div><input name="box" type="checkbox" value="Tata Tea Kanan Devan"> Tata Tea Kanan Devan</div>
+                        <div><input name="box" type="checkbox" value="Rin"> Rin</div>
+                        <div><input name="box" type="checkbox" value="Vim"> Vim</div>
+                        <div><input name="box" type="checkbox" value="surfexcel"> surfexcel</div>
+                        <div><input name="box" type="checkbox" value="Aashirvaad"> Aashirvaad</div>
+                        <div><input name="box" type="checkbox" value="bbroyal"> bbroyal</div>
+                        <div><input name="box" type="checkbox" value="Sunpure"> Sunpure</div>
+                        <div><input name="box" type="checkbox" value="Haldirams"> Haldirams</div>
+                        <div><input name="box" type="checkbox" value="Bingo"> Bingo</div>
+                        <div><input name="box" type="checkbox" value="Cadbury Dairy Milk"> Cadbury Dairy Milk</div>
+                        <div><input name="box" type="checkbox" value="Britannia NutriChoice"> Organic</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Seasonal</h4>
+                    <h3>Seasonal</h3>
                     <div>
-                        <div><input type="checkbox">Summer Fruits</div>
-                        <div><input type="checkbox">Summer Veggies</div>
-                        <div><input type="checkbox">Winter Fruits</div>
-                        <div><input type="checkbox">Winter Veggies</div>
+                        <div><input name="box" value="summer" type="checkbox">Summer Fruits</div>
+                        <div><input name="box" value="winter" type="checkbox">Summer Veggies</div>
+                        <div><input name="box" value="rainy" type="checkbox">Winter Fruits</div>
+                        <div><input name="box" value="winter" type="checkbox">Winter Veggies</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Country of Origin</h4>
+                    <h3>Country of Origin</h3>
                     <div>
-                        <div><input type="checkbox">India</div>
-                        <div><input type="checkbox">Australia</div>
-                        <div><input type="checkbox">China</div>
+                        <div><input name="box" value="india" type="checkbox">India</div>
+                        <div><input name="box" value="australia" type="checkbox">Australia</div>
+                        <div><input name="box" value="china" type="checkbox">China</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Price</h4>
+                    <h3>Price</h3>
                     <div>
-                        <div><input type="checkbox">Rs 21 to Rs 50 <span id="a"></span></div>
-                        <div><input type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
-                        <div><input type="checkbox">Rs 101 to Rs 200 <span id="c"></span></div>
-                        <div><input type="checkbox">Rs 201 to Rs 500 <span id="d"></span></div>
-                        <div><input type="checkbox">More than Rs 501 <span id="e"></span></div>
+                        <div><input name="box" value="0" type="checkbox">Rs 0 to Rs 50 <span id="a"></span></div>
+                        <div><input name="box" value="51" type="checkbox">Rs 51 to Rs 100 <span id="b"></span></div>
+                        <div><input name="box" value="101" type="checkbox">Rs 101 to Rs 200 <span id="c"></span></div>
+                        <div><input name="box" value="201" type="checkbox">More than Rs 501 <span id="e"></span></div>
                     </div>
                 </div>
                 <div>
-                    <h4>Discount</h4>
+                    <h3>Discount</h3>
                     <div>
-                        <div><input type="checkbox">10% - 15%</div>
-                        <div><input type="checkbox">15% - 25% </div>
-                        <div><input type="checkbox">More than 25% </div>
+                        <div><input name="box" value="10" type="checkbox">10% - 15%</div>
+                        <div><input name="box" value="20" type="checkbox">15% - 25% </div>
+                        <div><input name="box" value="30" type="checkbox">More than 25% </div>
                     </div>
                 </div>
                 <div>
-                    <h4>Pack Size</h4>
+                    <h3>Pack Size</h3>
                     <div>
-                        <div><input type="checkbox">100gm</div>
-                        <div><input type="checkbox">500gm</div>
-                        <div><input type="checkbox">1kg</div>
+                        <div><input name="box" value="100gm" type="checkbox">100gm</div>
+                        <div><input name="box" value="500gm" type="checkbox">500gm</div>
+                        <div><input name="box" value="1kg" type="checkbox">1kg</div>
                     </div>
                 </div>
             </div>
             <div id="seconddiv">
                 <div id="countandsort">
-                    <div>
-                        <h2>Fruits and Vegetables (<span id="count"></span>)</h2>
+                    <div id="counttext">
+
                     </div>
-                    <div>
-                        <select name="" id="sortprice">
-                            <option value="">Sort</option>
-                            <option value="alpha">Alphabatical</option>
-                            <option value="low">Price-Low-to-High</option>
-                            <option value="high">Price-High-to-Low</option>
-                        </select>
+                    <div id="sorting">
+
                     </div>
                 </div>
                 <div id="fpdiv2">
@@ -160,57 +283,297 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+
+        </div>
     </div>
 </body>
 <script>
     let fpdiv2 = document.getElementById("fpdiv2")
     let sortprice = document.getElementById("sortprice")
     let carts = JSON.parse(localStorage.getItem('cartitems')) || []
+    let products = JSON.parse(localStorage.getItem('productdetails')) || []
+    let checkboxes = document.getElementsByName('box')
+    let searchbtn = document.getElementById("searchbtn")
+    let counttext = document.getElementById("counttext")
+    let sorting = document.getElementById('sorting')
+    let logineduser=JSON.parse(localStorage.getItem("logineduser"))||[]
+    let baseURL = `https://63c6633cdcdc478e15c05f89.mockapi.io`
+    let countandsort = document.getElementById("countandsort")
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].style.marginRight = '10px'
+    }
+
+
 
 
     fetch("https://63c8fc63904f040a9653bf85.mockapi.io/objects")
+
         .then((res) => res.json())
         .then((data) => {
             let arr = data
+            checkboxes.forEach(function (checkbox) {
+                checkbox.addEventListener('change', function () {
+                    temp =
+                        Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
+                            .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+                            .map(i => i.value)
 
-            sortprice.addEventListener('change', () => {
-                let val = sortprice.value
-                if (val == 'low') {
-                    let temp = arr.sort((a, b) => {
-                        return a.mrp - b.mrp
-                    })
-                    createdata(temp)
-                } else if (val == 'high') {
-                    let temp = arr.sort((a, b) => {
-                        return b.mrp - a.mrp
-                    })
-                    createdata(temp)
-                } else if (val == 'alpha') {
-                    let temp = arr.sort((a, b) => {
-                        if (a.name < b.name) return -1
 
-                    })
-                    createdata(temp)
-                } else {
-                    createdata(arr)
-                }
-            })
+
+
+                    if (temp.includes('fresho') || temp.includes('bb Combo') || temp.includes('organic') || temp.includes('usa')|| temp.includes('amul')|| temp.includes('Nestle')|| temp.includes('Tata Tea Kanan Devan')|| temp.includes('Bisleri')|| temp.includes('Boost')|| temp.includes('Red Label')|| temp.includes('surfexcel')|| temp.includes('Vim')|| temp.includes('Rin')|| temp.includes('Sunpure')|| temp.includes('bbroyal')|| temp.includes('Aashirvaad')|| temp.includes('Britannia NutriChoice')|| temp.includes('Bingo')|| temp.includes('Haldirams')) {
+                        let dd = []
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] === 'fresho' || temp[i] === 'bb Combo' || temp[i] === 'organic' || temp[i] === 'usa'|| temp[i] === 'amul'|| temp[i] === 'Nestle'|| temp[i] === 'Tata Tea Kanan Devan'|| temp[i] === 'Bisleri'|| temp[i] === 'Boost'|| temp[i] === 'Red Label'|| temp[i] === 'surfexcel'|| temp[i] === 'Vim'|| temp[i] === 'Rin'|| temp[i] === 'Sunpure'|| temp[i] === 'bbroyal'|| temp[i] === 'Aashirvaad'|| temp[i] === 'Britannia NutriChoice'|| temp[i] === 'Bingo'|| temp[i] === 'Haldirams') {
+                                arr.filter((ele) => {
+                                    if (temp[i] == ele.brand) {
+                                        dd.push(ele)
+                                    }
+                                })
+                            }
+                        }
+
+                        let a = []
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] !== 'fresho' || temp[i] !== 'bbcombo' || temp[i] !== 'organic' || temp[i] !== 'usa') {
+                                dd.forEach((ele) => {
+                                    if (temp[i] == ele.packsize || temp[i] == ele.season || temp[i] == ele.country || temp[i] == ele.discount) {
+                                        a.push(ele)
+                                    }
+                                })
+                            }
+                        }
+                        let p = []
+                        for (let j = 0; j < temp.length; j++) {
+                            if (temp[j] == '0') {
+                                if (a.length == 0) {
+                                    dd.forEach((ele) => {
+                                        if (ele.mrp >= 0 && ele.mrp <= 50) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 0 && ele.mrp <= 50) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+
+                            } else if (temp[j] == '51') {
+                                if (a.length == 0) {
+                                    dd.forEach((ele) => {
+                                        if (ele.mrp >= 51 && ele.mrp <= 100) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 51 && ele.mrp <= 100) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            } else if (temp[j] == '101') {
+                                if (a.length == 0) {
+                                    dd.forEach((ele) => {
+                                        if (ele.mrp >= 101 && ele.mrp <= 200) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 101 && ele.mrp <= 200) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            } else if (temp[j] == '201') {
+                                if (a.length == 0) {
+                                    dd.forEach((ele) => {
+                                        if (ele.mrp >= 201) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 201) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            }
+                        }
+                        if (p.length !== 0 && a.length !== 0) {
+                            createdata(p)
+                        } else if (p.length === 0 && a.length !== 0) {
+                            createdata(a)
+                        } else if (a.length === 0 && p.length !== 0) {
+                            createdata(p)
+                        } else if (dd.length !== 0) {
+                            createdata(dd)
+                        }
+                        else {
+                            fpdiv2.innerHTML = null
+                            countandsort.style.opacity = 0
+                        }
+                    } else {
+                        let a = []
+                        for (let i = 0; i < temp.length; i++) {
+                            if (temp[i] !== 'fresho' || temp[i] !== 'bbcombo' || temp[i] !== 'organic' || temp[i] !== 'usa') {
+                                arr.forEach((ele) => {
+                                    if (temp[i] == ele.packsize || temp[i] == ele.season || temp[i] == ele.country || temp[i] == ele.discount) {
+                                        a.push(ele)
+                                    }
+                                })
+                            }
+                        }
+                        let p = []
+                        for (let j = 0; j < temp.length; j++) {
+                            if (temp[j] == '0') {
+                                if (a.length == 0) {
+                                    arr.forEach((ele) => {
+                                        if (ele.mrp >= 0 && ele.mrp <= 50) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 0 && ele.mrp <= 50) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+
+                            } else if (temp[j] == '51') {
+                                if (a.length == 0) {
+                                    arr.forEach((ele) => {
+                                        if (ele.mrp >= 51 && ele.mrp <= 100) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 51 && ele.mrp <= 100) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            } else if (temp[j] == '101') {
+                                if (a.length == 0) {
+                                    arr.forEach((ele) => {
+                                        if (ele.mrp >= 101 && ele.mrp <= 200) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 101 && ele.mrp <= 200) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            } else if (temp[j] == '201') {
+                                if (a.length == 0) {
+                                    arr.forEach((ele) => {
+                                        if (ele.mrp >= 201) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                } else {
+                                    a.forEach((ele) => {
+                                        if (ele.mrp >= 201) {
+                                            p.push(ele)
+                                        }
+                                    })
+                                }
+                            }
+                        }
+                        console.log(p, a);
+                        if (a.length === 0 && p.length !== 0) {
+                            createdata(p)
+                        } else if (p.length === 0 && a.length !== 0) {
+                            createdata(a)
+                        }
+                        else if (a.length === 0 && p.length === 0) {
+                            fpdiv2.innerHTML = null
+                            countandsort.style.opacity = 0
+                        }
+
+                    }
+                    if (temp.length === 0) {
+                        createdata(arr)
+                    }
+                })
+            });
+
+
+
             createdata(arr)
         })
 
-
     function createdata(data) {
+        counttext.innerHTML = null
+        sorting.innerHTML = null
+        countandsort.style.opacity = 1
+        let ct = document.createElement('h3')
+        let span = document.createElement('span')
+        let select = document.createElement('select')
+        let o1 = document.createElement('option')
+        let o2 = document.createElement('option')
+        let o3 = document.createElement('option')
+        let o4 = document.createElement('option')
+        o2.setAttribute('value', 'low')
+        o3.setAttribute('value', 'alpha')
+        o4.setAttribute('value', 'high')
+        o1.innerText = 'Sort'
+        o2.innerText = 'Alphabatical'
+        o3.innerText = 'Price-Low-to-High'
+        o4.innerText = 'Price-High-to-Low'
+        select.append(o1, o2, o3, o4)
+        sorting.append(select)
+        select.addEventListener('change', () => {
+            let val = select.value
+            if (val == 'low') {
+                let temp = data.sort((a, b) => {
+                    return a.mrp - b.mrp
+                })
+                createdata(temp)
+            } else if (val == 'high') {
+                let temp = data.sort((a, b) => {
+                    return b.mrp - a.mrp
+                })
+                createdata(temp)
+            } else if (val == 'alpha') {
+                let temp = data.sort((a, b) => {
+                    if (a.name < b.name) return -1
+                })
+                createdata(temp)
+            } else {
+                createdata(arr)
+            }
+        })
+
+        let c = 0
+        for (let i = 0; i < data.length; i++) {
+            c++
+        }
+        ct.innerText = 'Fruits and vegetables'
+        span.innerText = `[${c}]`
+        ct.append(span)
+
+        counttext.append(ct)
+
         fpdiv2.innerHTML = null
         data.forEach(ele => {
+
             let maindiv = document.createElement('div')
             let discoutdiv = document.createElement('div')
             let discoutp = document.createElement('p')
             let img = document.createElement('img')
             let brand = document.createElement('p')
             let name = document.createElement('h4')
-            let select = document.createElement('select')
-            let o1 = document.createElement('option')
-            let o2 = document.createElement('option')
             let bottomdiv = document.createElement('div')
             let price = document.createElement('h5')
             let time = document.createElement('p')
@@ -223,34 +586,27 @@
             let addbutton = document.createElement('button')
             input.value = 1
             img.addEventListener('click', () => {
-                ele["quantity"] = input.value
                 localStorage.setItem('productdetails', JSON.stringify(ele))
-                window.location.href = "./productdetail.html"
+                window.location.href = "../productdetailpage/productdetail.html"
             })
 
             addbutton.addEventListener('click', () => {
-                if (carts.length > 0) {
-                    let temp = false;
-                    for (let i = 0; i < carts.length; i++) {
-                        if (ele.name == carts[i].name) {
-                            temp = true;
-                            break;
-                        }
-                    }
-                    if (temp == false) {
-                        ele["quantity"] = input.value
-                        carts.push(ele)
-                        alert('Product added to Cart')
-                    } else if (temp === true) {
-                        alert("Product Already in Cart")
-                    }
-                }
-                if (carts.length === 0) {
-                    ele["quantity"] = input.value
-                    carts.push(ele)
-                }
-                localStorage.setItem('cartitems', JSON.stringify(carts))
-                console.log(input.value);
+                let loginedusercart = logineduser[0].cart.filter(item => item.name != ele.name)
+                ele.quantity = input.value
+                console.log(logineduser)
+                logineduser[0].cart = loginedusercart
+                logineduser[0].cart.push(ele)
+                localStorage.setItem("logineduser", JSON.stringify(logineduser))
+                let obj = { cart: logineduser[0].cart }
+                // logineduser[0].name = "Mani"
+                fetch(`${baseURL}/users/${logineduser[0].id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(obj)
+                })
+                alert("Successfully added to cart")
             })
             select.addEventListener('change', () => {
                 let val = select.value
@@ -258,59 +614,62 @@
 
                 }
             })
-            maindiv.addEventListener('mouseenter', (e) => {
-                maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
-                console.log('dd');
-            })
-            maindiv.addEventListener('mouseleave', () => {
-                maindiv.style.boxShadow = "none"
-            })
             //***css***//
+            // maindiv.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
             addbutton.style.backgroundColor = "red"
             addbutton.style.color = "white"
             addbutton.style.border = "none"
             addbutton.style.borderRadius = "5px"
-            maindiv.style.borderRadius = '5px'
+            maindiv.style.borderRadius = '10px'
             discoutdiv.style.textAlign = "end"
             maindiv.style.padding = "10%"
-            discoutdiv.style.color = "rgba(255, 0, 0, 0.422)"
+            discoutdiv.style.backgroundColor = "rgba(255, 0, 0, 0.422)"
+            discoutdiv.style.textAlign = "center"
             discoutdiv.style.marginBottom = "5%"
+            discoutdiv.style.borderRadius = "10px"
             quantitydiv.style.display = 'flex'
             quantitydiv.style.paddingRight = '25%'
             div1.style.padding = '0% 5%'
-            addbutton.style.padding = '0% 10%'
+            addbutton.style.padding = '10% 40%'
             input.style.width = '80%'
-            //***css***//
-
             discoutp.innerText = `${ele.discount}% discount`
+            discoutp.style.color = 'white'
             img.setAttribute('src', ele.image)
             qp.innerText = 'Qty'
             brand.innerText = ele.brand
             name.innerText = ele.name
-            o1.innerText = '10% discount'
-            o1.value = '10'
-            o2.value = '20'
-            o2.innerText = '20% discout'
+            name.style.color = 'red'
             price.innerText = `MRP:-${ele.mrp}`
             time.innerText = 'Standard Delivery: Today 8:00AM - 10:00AM'
             input.setAttribute('placeholder', "1")
             addbutton.innerText = 'AddItem'
 
-
-
-            //***appending***//
             discoutdiv.append(discoutp)
-            select.append(o1, o2)
             div1.append(qp)
             div2.append(input)
             div3.append(addbutton)
             quantitydiv.append(div1, div2, div3)
             bottomdiv.append(price, time, quantitydiv)
-            maindiv.append(discoutdiv, img, brand, name, select, bottomdiv)
+            maindiv.append(discoutdiv, img, name, brand, bottomdiv)
             fpdiv2.append(maindiv)
         });
     }
 
+
+
+
+</script>
+<script type="module">
+
+    import {navbar} from "../components/navbar.js";
+
+    let nav_div = document.querySelector("#nav");
+    nav_div.innerHTML = navbar();
+</script>
+<script type="module">
+    import {footer} from "../components/footer.js"; 
+    let foot_div =document.querySelector("#footer");
+    foot_div.innerHTML = footer();
 </script>
 
 </html>
