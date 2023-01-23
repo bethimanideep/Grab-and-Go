@@ -28,11 +28,10 @@
     
 }
 .category-drop > p{
-    padding:5px 10px;
-    
+    padding: 5%;
     font-weight: bold;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 .category-drop > p > .fa-angle-down{
     margin-left: 18%;
@@ -66,7 +65,7 @@
 #btn{
     border: none;
     width: 6%;
-    height:38px;
+    height:36px;
     background-color: rgb(132,194,37);
     color: white;
 }
