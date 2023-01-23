@@ -1,4 +1,10 @@
 # loyal-elbow-6166
+TEAM:-
+*Anurag
+*kunal
+*Arundas
+*Amit
+*Manideep
 
 API LINK:-
 https://63c6633cdcdc478e15c05f89.mockapi.io/products
@@ -19,3 +25,6 @@ fetch("https://63c6633cdcdc478e15c05f89.mockapi.io/products")
             console.log(data[0]."CATEGORIES");
         })
 
+PROJECT DESCRIPTION:-
+Grab And Go is a e-commerce website where you can able to buy products which are related to GROCIRIES.
+WEBSITE LINK:-https://friendly-mooncake-7438ee.netlify.app/
